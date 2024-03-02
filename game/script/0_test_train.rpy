@@ -40,7 +40,7 @@ label test_train:
     $ train_speed = 1.0
     scene test_backlayer
     $ test_movingobject1 = MovingImage("test_movingobject", 0.25, (0, 5000))
-    $ test_movingobject1.set_show(True, behind="background")
+    $ test_movingobject1.set_show(True)
     show test_frontlayer at cabin_transform_shake(1)
     show black:
         alpha 1.0

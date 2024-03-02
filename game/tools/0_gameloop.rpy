@@ -125,10 +125,10 @@ init python:
             renpy.hide(self.img)
             super().destroy()
 
-        def set_show(self, val, behind=None):
+        def set_show(self, val):
             if val is True:
                 self.trans.function = self._transform_function
-                renpy.show(self.img, at_list=[self.trans], behind=behind)
+                renpy.show(self.img, at_list=[self.trans])
             else:
                 renpy.hide(self.img)
 
