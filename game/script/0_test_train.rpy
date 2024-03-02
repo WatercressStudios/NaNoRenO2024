@@ -3,9 +3,9 @@
 init python:
     import random
     class MovingImage(GameImage):
-        def __init__(self, img, ypos, interval, *args, **kwargs):
+        def __init__(self, img, ypos, min_interval, max_interval, *args, **kwargs):
             self.ypos = ypos
-            self.interval = interval
+            self.interval = (min_interval, max_interval)
             super().__init__(img, *args, **kwargs)
 
         def on_start(self):
@@ -39,12 +39,13 @@ transform cabin_transform_shake(intensity=1.0):
 label test_train:
     $ train_speed = 1.0
     scene test_backlayer
-    $ test_movingobject1 = MovingImage("test_movingobject", 0.25, (0, 5000))
+    $ test_movingobject1 = MovingImage("test_movingobject", ypos=0.25, min_interval=0, max_interval=5000)
     $ test_movingobject1.set_show(True)
     show test_frontlayer at cabin_transform_shake(1)
     show black:
         alpha 1.0
-        linear 0.5 alpha 0.0
+        linear 1 alpha 0.0
+    pause 1
     hide black
 
     "Testing train"
