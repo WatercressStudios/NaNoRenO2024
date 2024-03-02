@@ -36,11 +36,16 @@ transform cabin_transform_shake(intensity=1.0):
         ease 0.2 offset (round(3*intensity), 0)
         repeat
 
+image test_movingobject1 = "test_movingobject"
+image test_movingobject2 = "test_movingobject"
+
 label test_train:
     $ train_speed = 1.0
     scene test_backlayer
-    $ test_movingobject1 = MovingImage("test_movingobject", ypos=0.25, min_interval=0, max_interval=5000)
+    $ test_movingobject1 = MovingImage("test_movingobject1", ypos=0.25, min_interval=0, max_interval=5000)
+    $ test_movingobject2 = MovingImage("test_movingobject2", ypos=0.3, min_interval=0, max_interval=5000)
     $ test_movingobject1.set_show(True)
+    $ test_movingobject2.set_show(True)
     show test_frontlayer at cabin_transform_shake(1)
     show black:
         alpha 1.0
