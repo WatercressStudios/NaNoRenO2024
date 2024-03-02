@@ -25,12 +25,23 @@ init python:
             return True
     train_speed = 1.0
 
+transform cabin_transform_shake(intensity=1.0):
+    anchor (0.5, 0.5) zoom 1.1 pos (0.5, 0.5)
+    block:
+        ease 0.2 offset (round(4*intensity), round(-3*intensity))
+        ease 0.2 offset (round(2*intensity), 0)
+        ease 0.2 offset (round(-1*intensity), round(1*intensity))
+        ease 0.2 offset (0, round(-4*intensity))
+        ease 0.2 offset (round(-1*intensity), round(2*intensity))
+        ease 0.2 offset (round(3*intensity), 0)
+        repeat
+
 label test_train:
     $ train_speed = 1.0
     scene test_backlayer
     $ test_movingobject1 = MovingImage("test_movingobject", 0.25, (0, 5000))
     $ test_movingobject1.set_show(True, behind="background")
-    show test_frontlayer
+    show test_frontlayer at cabin_transform_shake(1)
     show black:
         alpha 1.0
         linear 0.5 alpha 0.0
