@@ -1,27 +1,32 @@
-﻿# define config.layers = ['background', 'master', 'transient', 'screens', 'overlay' ]
+﻿define config.layers = ['background', 'master', 'foreground', 'transient', 'screens', 'overlay' ]
 
 init python:
     import random
     class MovingImage(GameImage):
-        def __init__(self, img, ypos, min_interval, max_interval, *args, **kwargs):
+        def __init__(self, img, ypos, min_interval, max_interval, init_xoffset, out_xoffset, *args, **kwargs):
             self.ypos = ypos
             self.interval = (min_interval, max_interval)
+            self.init_xoffset = init_xoffset
+            if out_xoffset is None:
+                self.out_xoffset = 0
+            else:
+                self.out_xoffset = out_xoffset
             super().__init__(img, *args, **kwargs)
 
         def on_start(self):
             print "start"
-            self.trans.xpos = 0.0
+            self.trans.xpos = 1.0
             self.trans.ypos = self.ypos
 
         def on_update(self):
             # print "update"
             if not self.trans.xoffset:
-                self.trans.xoffset = 0
-            self.trans.xoffset += int(GameLoop.delta_time * train_speed * 10.0)
-            if self.trans.xoffset > 0 and not self.is_partially_visible():
+                self.trans.xoffset = self.init_xoffset
+            self.trans.xoffset -= int(GameLoop.delta_time * train_speed * 10)
+            if self.trans.xoffset < self.out_xoffset and not self.is_partially_visible(check_x=True, check_y=False):
                 rand = random.random()
                 val = self.interval[0] + (self.interval[1]-self.interval[0]) * rand
-                self.trans.xoffset = -int(val)
+                self.trans.xoffset = self.init_xoffset + int(val)
             return True
     train_speed = 1.0
 
@@ -43,20 +48,33 @@ image test_movingobject2 = "test_movingobject"
 label test_train:
     $ train_speed = 1.0
     scene test_skybox_beige
-    $ test_movingobject1 = MovingImage("test_movingobject1", ypos=0, min_interval=10000, max_interval=10000)
-    # $ test_movingobject2 = MovingImage("test_movingobject2", ypos=0, min_interval=0, max_interval=0)
-    $ test_movingobject1.set_show(True)
-    # $ test_movingobject2.set_show(True)
-    show test_frontlayer
-    # show test_windowglow
-    show test_charleft
-    show test_charright
+    $ test_movingpoles = MovingImage("test_movingobject1", ypos=0, min_interval=10000, max_interval=10000, init_xoffset=0, out_xoffset=None)
+    $ test_movingpolesrandom = MovingImage("test_movingobject2", ypos=0, min_interval=0, max_interval=10000, init_xoffset=0, out_xoffset=None)
+    $ test_movingtrain = MovingImage("test_movingtrain", ypos=0, min_interval=0, max_interval=0, init_xoffset=-500, out_xoffset=500)
+
+    show test_frontlayer onlayer foreground
+    show test_charleft onlayer foreground
+    show test_charright onlayer foreground
     camera at cabin_transform_shake(1)
-    show black:
+    show black onlayer foreground:
         alpha 1.0
         linear 1 alpha 0.0
     pause 1
     hide black
 
-    "Testing train"
+    $ test_movingpoles.set_show(True)
+    $ test_movingpolesrandom.set_show(False)
+    $ test_movingtrain.set_show(False)
+    "Poles moving at fixed intervals."
+
+    $ test_movingpoles.set_show(False)
+    $ test_movingpolesrandom.set_show(True)
+    $ test_movingtrain.set_show(False)
+    "Poles moving at random intervals. Trees?"
+
+    $ test_movingpoles.set_show(False)
+    $ test_movingpolesrandom.set_show(False)
+    $ test_movingtrain.set_show(True)
+    $ train_speed = 2.0
+    "Larger shadows. Trains?"
     return

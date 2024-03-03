@@ -157,10 +157,14 @@ init python:
                     return True
                 if bounds[0] + bounds[2] >= 0 and bounds[0] + bounds[2] <= config.screen_width:
                     return True
+                if bounds[0] < 0 and bounds[0] + bounds[2] > config.screen_width:
+                    return True
             if check_y and not check_x:
                 if bounds[1] >= 0 and bounds[1] <= config.screen_height:
                     return True
                 if bounds[1] + bounds[3] >= 0 and bounds[1] + bounds[3] <= config.screen_height:
+                    return True
+                if bounds[1] < 0 and bounds[1] + bounds[3] > config.screen_height:
                     return True
             if check_x and check_y:
                 if bounds[0] >= 0 and bounds[0] <= config.screen_width and bounds[1] >= 0 and bounds[1] <= config.screen_height:
