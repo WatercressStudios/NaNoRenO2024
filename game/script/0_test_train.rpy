@@ -48,6 +48,8 @@ image test_movingobject2 = "test_movingobject"
 label test_train:
     $ train_speed = 1.0
     scene test_skybox_beige
+    camera foreground at cabin_transform_shake(0)
+
     $ test_movingpoles = MovingImage("test_movingobject1", ypos=0, min_interval=10000, max_interval=10000, init_xoffset=0, out_xoffset=None)
     $ test_movingpolesrandom = MovingImage("test_movingobject2", ypos=0, min_interval=0, max_interval=10000, init_xoffset=0, out_xoffset=None)
     $ test_movingtrain = MovingImage("test_movingtrain", ypos=0, min_interval=0, max_interval=0, init_xoffset=-500, out_xoffset=500)
@@ -55,12 +57,22 @@ label test_train:
     show test_frontlayer onlayer foreground
     show test_charleft onlayer foreground
     show test_charright onlayer foreground
-    camera at cabin_transform_shake(1)
     show black onlayer foreground:
         alpha 1.0
         linear 1 alpha 0.0
     pause 1
     hide black
+
+    "No camera shake"
+
+    camera foreground at cabin_transform_shake(1)
+    "Camera shake at 1"
+
+    camera foreground at cabin_transform_shake(2)
+    "Camera shake at 2"
+
+    camera foreground at cabin_transform_shake(0.5)
+    "Camera shake at 0.5"
 
     $ test_movingpoles.set_show(True)
     $ test_movingpolesrandom.set_show(False)
