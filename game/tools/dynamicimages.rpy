@@ -854,7 +854,7 @@ screen dynamicspritespreview_previewpopup(emotesdict, offset=(0,0)):
             align (0.64, 0.5)
             offset offset
             #xysize (600, 800)
-            xysize (int(config.screen_width/4), int(config.screen_height*3/4))
+            xysize (int(config.screen_width/2), int(config.screen_height*3/4))
             margin (0,0)
             padding (15,15,50,15)
             action Hide("dynamicspritespreview_previewpopup")

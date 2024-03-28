@@ -30,33 +30,57 @@ init python:
             return True
     train_speed = 1.0
 
-transform cabin_transform_shake(intensity=1.0):
-    anchor (0.5, 0.5) zoom 1.01 pos (0.5, 0.5)
-    block:
-        ease 0.2 offset (round(4*intensity), round(-3*intensity))
-        ease 0.2 offset (round(2*intensity), 0)
-        ease 0.2 offset (round(-1*intensity), round(1*intensity))
-        ease 0.2 offset (0, round(-4*intensity))
-        ease 0.2 offset (round(-1*intensity), round(2*intensity))
-        ease 0.2 offset (round(3*intensity), 0)
-        repeat
+    fre_pos = (1.0, 0.7)
+    oph_pos = (0.0, 0.66)
 
-image test_skybox_beige = "#FFFFDC"
 image test_movingobject1 = "test_movingobject"
 image test_movingobject2 = "test_movingobject"
 
+image skybox_white = "#FFFFDC"
+image skybox_yellow = "#ffdd88"
+image skybox_dark = "#1c1065"
+
+image oph_shadow = im.Flip("bgs/shadow.png", horizontal=True)
+image fre_shadow = "shadow"
+
+transform camera_transform_init():
+    anchor (0.5, 0.5) zoom 1.01 pos (0.5, 0.5)
+
+transform camera_transform(shake=1.0, pos=(0.5, 0.5), zoom=1.01, duration=0.5):
+    ease duration pos pos zoom zoom
+    block:
+        ease 0.2 offset (round(4*shake), round(-3*shake))
+        ease 0.2 offset (round(2*shake), 0)
+        ease 0.2 offset (round(-1*shake), round(1*shake))
+        ease 0.2 offset (0, round(-4*shake))
+        ease 0.2 offset (round(-1*shake), round(2*shake))
+        ease 0.2 offset (round(3*shake), 0)
+        repeat
+
+transform oph_transform:
+    anchor (0.5, 0.5) pos (0.62, 0.68)
+transform fre_transform:
+    anchor (0.5, 0.5) pos (0.325, 0.71)
+
 label test_train:
     $ train_speed = 1.0
-    scene test_skybox_beige
-    camera foreground at cabin_transform_shake(0)
+    scene skybox_white
+    camera foreground at camera_transform_init
 
     $ test_movingpoles = MovingImage("test_movingobject1", ypos=0, min_interval=10000, max_interval=10000, init_xoffset=0, out_xoffset=None)
     $ test_movingpolesrandom = MovingImage("test_movingobject2", ypos=0, min_interval=0, max_interval=10000, init_xoffset=0, out_xoffset=None)
     $ test_movingtrain = MovingImage("test_movingtrain", ypos=0, min_interval=0, max_interval=0, init_xoffset=-500, out_xoffset=500)
 
-    show test_frontlayer onlayer foreground
-    show test_charleft onlayer foreground
-    show test_charright onlayer foreground
+    show bg1_closed onlayer foreground
+
+    # NOTE: Be sure to show oph shadow whenever her sprite is shown
+    show oph_shadow onlayer foreground
+    show oph a_normal onlayer foreground at oph_transform
+    
+    # NOTE: Be sure to show fre shadow whenever her sprite is shown
+    show fre_shadow onlayer foreground
+    show fre normal onlayer foreground at fre_transform
+    
     show black onlayer foreground:
         alpha 1.0
         linear 1 alpha 0.0
@@ -65,13 +89,19 @@ label test_train:
 
     "No camera shake"
 
-    camera foreground at cabin_transform_shake(1)
+    camera foreground at camera_transform(shake=1, pos=(0.5, 0.5), zoom=1.01)
     "Camera shake at 1"
 
-    camera foreground at cabin_transform_shake(2)
+    camera foreground at camera_transform(shake=2)
     "Camera shake at 2"
 
-    camera foreground at cabin_transform_shake(0.5)
+    camera foreground at camera_transform(shake=2, pos=(1.0, 0.7), zoom=2.01)
+    "Pan to Freya"
+
+    camera foreground at camera_transform(shake=2, pos=(0.0, 0.66), zoom=2.01)
+    "Pan to Ophelia"
+
+    camera foreground at camera_transform(shake=0.5)
     "Camera shake at 0.5"
 
     $ test_movingpoles.set_show(True)
@@ -88,5 +118,5 @@ label test_train:
     $ test_movingpolesrandom.set_show(False)
     $ test_movingtrain.set_show(True)
     $ train_speed = 2.0
-    "Larger shadows. Trains?"
+    "Larger shadows. Was supposed to be trains, but might be better fit for buildings?"
     return
