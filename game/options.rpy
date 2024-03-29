@@ -12,13 +12,13 @@
 ##
 ## The _() surrounding the string marks it as eligible for translation.
 
-define config.name = _("NaNoRenO2024")
+define config.name = _("About the Journey: Closing the Distance")
 
 
 ## Determines if the title given above is shown on the main menu screen. Set
 ## this to False to hide the title.
 
-define gui.show_name = True
+define gui.show_name = False
 
 
 ## The version of the game.
@@ -37,7 +37,7 @@ define gui.about = _p("""
 ## distribution. This must be ASCII-only, and must not contain spaces, colons,
 ## or semicolons.
 
-define build.name = "NaNoRenO2024"
+define build.name = "ClosingTheDistance"
 
 
 ## Sounds and music ############################################################
@@ -195,6 +195,8 @@ init python:
     build.documentation('*.html')
     build.documentation('*.txt')
 
+
+define config.has_sync = False
 
 ## A Google Play license key is required to perform in-app purchases. It can be
 ## found in the Google Play developer console, under "Monetize" > "Monetization

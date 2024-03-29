@@ -24,7 +24,6 @@ style hyperlink_text:
 style gui_text:
     properties gui.text_properties("interface")
 
-
 style button:
     properties gui.button_properties("button")
 
@@ -32,13 +31,11 @@ style button_text is gui_text:
     properties gui.text_properties("button")
     yalign 0.5
 
-
 style label_text is gui_text:
     properties gui.text_properties("label", accent=True)
 
 style prompt_text is gui_text:
     properties gui.text_properties("prompt")
-
 
 style bar:
     ysize gui.bar_size
@@ -70,11 +67,9 @@ style vslider:
     base_bar Frame("gui/slider/vertical_[prefix_]bar.png", gui.vslider_borders, tile=gui.slider_tile)
     thumb "gui/slider/vertical_[prefix_]thumb.png"
 
-
 style frame:
     padding gui.frame_borders.padding
     background Frame("gui/frame.png", gui.frame_borders, tile=gui.frame_tile)
-
 
 
 ################################################################################
@@ -136,7 +131,7 @@ style window:
     yalign gui.textbox_yalign
     ysize gui.textbox_height
 
-    background Image("gui/textbox.png", xalign=0.5, yalign=1.0)
+    background Image("gui/train/textbox.png", xalign=0.5, yalign=1.0)
 
 style namebox:
     xpos gui.name_xpos
@@ -237,7 +232,6 @@ style choice_button_text is default:
 ## menus.
 
 screen quick_menu():
-
     ## Ensure this appears on top of other screens.
     zorder 100
 
@@ -245,18 +239,49 @@ screen quick_menu():
 
         hbox:
             style_prefix "quick"
+            xalign 0.222
+            yalign 0.999
+            spacing 24
+            imagebutton auto "gui/train/qbuttons/qbutton_rollback_%s.png":
+                action Rollback()
+                tooltip "Rollback"
+            imagebutton auto "gui/train/qbuttons/qbutton_skip_%s.png":
+                action Skip()
+                alternate Skip(fast=True, confirm=True)
+                tooltip "Skip"
+            imagebutton auto "gui/train/qbuttons/qbutton_auto_%s.png":
+                action Preference("auto-forward", "toggle")
+                tooltip "Auto Forward"
+            imagebutton auto "gui/train/qbuttons/qbutton_history_%s.png":
+                action ShowMenu('history')
+                tooltip "History"
+            imagebutton auto "gui/train/qbuttons/qbutton_menu_%s.png":
+                action ShowMenu('pause_menu')
+                tooltip "Pause Menu"
 
-            xalign 0.5
-            yalign 1.0
+        frame:
+            background Image("gui/train/ticket_barcode.png", xalign=0.76, yalign=0.9995)
 
-            textbutton _("Back") action Rollback()
-            textbutton _("History") action ShowMenu('history')
-            textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
-            textbutton _("Auto") action Preference("auto-forward", "toggle")
-            textbutton _("Save") action ShowMenu('save')
-            textbutton _("Q.Save") action QuickSave()
-            textbutton _("Q.Load") action QuickLoad()
-            textbutton _("Prefs") action ShowMenu('preferences')
+    $ tooltip = GetTooltip()
+
+    if tooltip:
+        nearrect:
+            focus "tooltip"
+            prefer_top True
+
+            frame:
+                at transform:
+                    alpha 0
+                    pause .75
+                    easein 0.25 alpha 1.0
+                
+                align (0.5, 0.5)
+                insensitive_background '#000000'
+
+                text tooltip:
+                    color '#ffffff'
+                    size 20
+                    yoffset 2
 
 
 ## This code ensures that the quick_menu screen is displayed in-game, whenever
@@ -291,44 +316,54 @@ screen navigation():
         style_prefix "navigation"
 
         xpos gui.navigation_xpos
-        yalign 0.5
+        xoffset -8
+
+        if main_menu:
+            yalign 0.6
+        else:
+            yalign 0.66
 
         spacing gui.navigation_spacing
 
         if main_menu:
 
-            textbutton _("Start") action Start()
+            imagebutton auto "gui/train/mbuttons/mbutton_start_%s.png":
+                action Start()
 
         else:
 
-            textbutton _("History") action ShowMenu("history")
+            imagebutton auto "gui/train/mbuttons/mbutton_history_%s.png":
+                action ShowMenu("history")
 
-            textbutton _("Save") action ShowMenu("save")
+            imagebutton auto "gui/train/mbuttons/mbutton_save_%s.png":
+                action ShowMenu("save")
 
-        textbutton _("Load") action ShowMenu("load")
+        imagebutton auto "gui/train/mbuttons/mbutton_load_%s.png":
+            action ShowMenu("load")
 
-        textbutton _("Preferences") action ShowMenu("preferences")
+        imagebutton auto "gui/train/mbuttons/mbutton_preferences_%s.png":
+            action ShowMenu("preferences")
 
-        if _in_replay:
+        if not main_menu:
 
-            textbutton _("End Replay") action EndReplay(confirm=True)
+            imagebutton auto "gui/train/mbuttons/mbutton_main_menu_%s.png":
+                action MainMenu()
 
-        elif not main_menu:
-
-            textbutton _("Main Menu") action MainMenu()
-
-        textbutton _("About") action ShowMenu("about")
+        imagebutton auto "gui/train/mbuttons/mbutton_about_%s.png":
+            action ShowMenu("about")
 
         if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
             ## Help isn't necessary or relevant to mobile devices.
-            textbutton _("Help") action ShowMenu("help")
+            imagebutton auto "gui/train/mbuttons/mbutton_help_%s.png":
+                action ShowMenu("help")
 
         if renpy.variant("pc"):
 
             ## The quit button is banned on iOS and unnecessary on Android and
             ## Web.
-            textbutton _("Quit") action Quit(confirm=not main_menu)
+            imagebutton auto "gui/train/mbuttons/mbutton_quit_%s.png":
+                action Quit(confirm=not main_menu)
 
 
 style navigation_button is gui_button
@@ -383,9 +418,10 @@ style main_menu_version is main_menu_text
 
 style main_menu_frame:
     xsize 420
+    xoffset 40
     yfill True
 
-    background "gui/overlay/main_menu.png"
+    background "gui/train/navigation_container.png"
 
 style main_menu_vbox:
     xalign 1.0
@@ -433,6 +469,7 @@ screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
 
             frame:
                 style "game_menu_content_frame"
+                background "gui/train/content_container.png"
 
                 if scroll == "viewport":
 
@@ -473,12 +510,11 @@ screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
 
     use navigation
 
-    textbutton _("Return"):
-        style "return_button"
-
+    imagebutton auto "gui/train/mbuttons/mbutton_return_%s.png":
+        xoffset 52
+        yalign 1.0
+        yoffset -97
         action Return()
-
-    label title
 
     if main_menu:
         key "game_menu" action ShowMenu("main_menu")
@@ -498,24 +534,28 @@ style return_button is navigation_button
 style return_button_text is navigation_button_text
 
 style game_menu_outer_frame:
-    bottom_padding 45
-    top_padding 180
-
-    background "gui/overlay/game_menu.png"
+    background "gui/train/confirm.png"
 
 style game_menu_navigation_frame:
     xsize 420
+    xoffset 40
     yfill True
 
+    background "gui/train/navigation_container.png"
+
 style game_menu_content_frame:
-    left_margin 60
-    right_margin 30
-    top_margin 15
+    top_padding 170
+    left_padding 50
+    right_padding 50
+    bottom_padding 170
+    left_margin 80
+    top_margin 60
 
 style game_menu_viewport:
     xsize 1380
 
 style game_menu_vscrollbar:
+    xoffset -18
     unscrollable gui.unscrollable
 
 style game_menu_side:
@@ -602,88 +642,75 @@ screen file_slots(title):
     default page_name_value = FilePageNameInputValue(pattern=_("Page {}"), auto=_("Automatic saves"), quick=_("Quick saves"))
 
     use game_menu(title):
+        ## The grid of file slots.
+        grid gui.file_slot_cols gui.file_slot_rows:
+            style_prefix "slot"
 
-        fixed:
+            xalign 0.5
+            yalign 0.5
 
-            ## This ensures the input will get the enter event before any of the
-            ## buttons do.
-            order_reverse True
+            spacing gui.slot_spacing
 
-            ## The page name, which can be edited by clicking on a button.
-            button:
-                style "page_label"
+            for i in range(gui.file_slot_cols * gui.file_slot_rows):
 
-                key_events True
-                xalign 0.5
-                action page_name_value.Toggle()
+                $ slot = i + 1
 
-                input:
-                    style "page_label_text"
-                    value page_name_value
+                button:
+                    action FileAction(slot)
 
-            ## The grid of file slots.
-            grid gui.file_slot_cols gui.file_slot_rows:
-                style_prefix "slot"
+                    has vbox
 
-                xalign 0.5
-                yalign 0.5
+                    add FileScreenshot(slot) xalign 0.5
 
-                spacing gui.slot_spacing
+                    text FileTime(slot, format=_("{#file_time}%A, %B %d %Y, %H:%M"), empty=_("empty slot")):
+                        style "slot_time_text"
 
-                for i in range(gui.file_slot_cols * gui.file_slot_rows):
+                    text FileSaveName(slot):
+                        style "slot_name_text"
 
-                    $ slot = i + 1
+                    key "save_delete" action FileDelete(slot)
 
-                    button:
-                        action FileAction(slot)
+        ## Buttons to access other pages.
+        vbox:
+            style_prefix "page"
 
-                        has vbox
+            xalign 0.5
+            yalign 1.0
 
-                        add FileScreenshot(slot) xalign 0.5
+            hbox:
+                xalign 1.0
 
-                        text FileTime(slot, format=_("{#file_time}%A, %B %d %Y, %H:%M"), empty=_("empty slot")):
-                            style "slot_time_text"
+                spacing gui.page_spacing
 
-                        text FileSaveName(slot):
-                            style "slot_name_text"
+                textbutton _("<"):
+                    left_padding 210
+                    action FilePagePrevious()
 
-                        key "save_delete" action FileDelete(slot)
+                if config.has_autosave:
+                    textbutton _("{#auto_page}A") action FilePage("auto")
 
-            ## Buttons to access other pages.
-            vbox:
-                style_prefix "page"
+                if config.has_quicksave:
+                    textbutton _("{#quick_page}Q") action FilePage("quick")
 
-                xalign 0.5
-                yalign 1.0
+                ## range(1, 10) gives the numbers from 1 to 9.
+                for page in range(1, 10):
+                    textbutton "[page]":
+                        xsize None 
+                        action FilePage(page)
 
-                hbox:
-                    xalign 0.5
+                textbutton _(">"):
+                    right_padding 210
+                    action FilePageNext()
 
-                    spacing gui.page_spacing
-
-                    textbutton _("<") action FilePagePrevious()
-
-                    if config.has_autosave:
-                        textbutton _("{#auto_page}A") action FilePage("auto")
-
-                    if config.has_quicksave:
-                        textbutton _("{#quick_page}Q") action FilePage("quick")
-
-                    ## range(1, 10) gives the numbers from 1 to 9.
-                    for page in range(1, 10):
-                        textbutton "[page]" action FilePage(page)
-
-                    textbutton _(">") action FilePageNext()
-
-                if config.has_sync:
-                    if CurrentScreenName() == "save":
-                        textbutton _("Upload Sync"):
-                            action UploadSync()
-                            xalign 0.5
-                    else:
-                        textbutton _("Download Sync"):
-                            action DownloadSync()
-                            xalign 0.5
+            if config.has_sync:
+                if CurrentScreenName() == "save":
+                    textbutton _("Upload Sync"):
+                        action UploadSync()
+                        xalign 0.5
+                else:
+                    textbutton _("Download Sync"):
+                        action DownloadSync()
+                        xalign 0.5
 
 
 style page_label is gui_label
@@ -697,7 +724,7 @@ style slot_time_text is slot_button_text
 style slot_name_text is slot_button_text
 
 style page_label:
-    xpadding 75
+    xpadding 60
     ypadding 5
 
 style page_label_text:
@@ -731,7 +758,7 @@ screen preferences():
 
     use game_menu(_("Preferences"), scroll="viewport"):
 
-        vbox:
+        hbox:
 
             hbox:
                 box_wrap True
@@ -739,17 +766,23 @@ screen preferences():
                 if renpy.variant("pc") or renpy.variant("web"):
 
                     vbox:
+                        xsize 240
                         style_prefix "radio"
                         label _("Display")
-                        textbutton _("Window") action Preference("display", "window")
-                        textbutton _("Fullscreen") action Preference("display", "fullscreen")
+                        textbutton _("Window"):
+                            action Preference("display", "window")
+                        textbutton _("Fullscreen"):
+                            action Preference("display", "fullscreen")
 
                 vbox:
                     style_prefix "check"
                     label _("Skip")
-                    textbutton _("Unseen Text") action Preference("skip", "toggle")
-                    textbutton _("After Choices") action Preference("after choices", "toggle")
-                    textbutton _("Transitions") action InvertSelected(Preference("transitions", "toggle"))
+                    textbutton _("Unseen Text"):
+                        action Preference("skip", "toggle")
+                    textbutton _("After Choices"):
+                        action Preference("after choices", "toggle")
+                    textbutton _("Transitions"):
+                        action InvertSelected(Preference("transitions", "toggle"))
 
                 ## Additional vboxes of type "radio_pref" or "check_pref" can be
                 ## added here, to add additional creator-defined preferences.
@@ -851,6 +884,9 @@ style radio_button:
 
 style radio_button_text:
     properties gui.text_properties("radio_button")
+    xalign 0.0
+    yalign 0.0
+    yoffset 0
 
 style check_vbox:
     spacing gui.pref_button_spacing
@@ -861,6 +897,9 @@ style check_button:
 
 style check_button_text:
     properties gui.text_properties("check_button")
+    xalign 0.0
+    yalign 0.0
+    yoffset 0
 
 style slider_slider:
     xsize 525
@@ -899,7 +938,6 @@ screen history():
         for h in _history_list:
 
             window:
-
                 ## This lays things out properly if history_height is None.
                 has fixed:
                     yfit True
@@ -1150,25 +1188,39 @@ screen confirm(message, yes_action, no_action):
 
     style_prefix "confirm"
 
-    add "gui/overlay/confirm.png"
+    add "gui/train/confirm.png"
 
     frame:
+        background "gui/train/confirm_frame.png"
+        align (0.5, 0.5)
+        xsize 700
+        ysize 500
 
         vbox:
-            xalign .5
-            yalign .5
-            spacing 45
+            xsize 640
+            ysize 413
 
             label _(message):
                 style "confirm_prompt"
+                text_yalign 0.5
+                xsize 640
+                ysize 188
                 xalign 0.5
+                yalign 0.5
 
             hbox:
+                xsize 640
+                ysize 62
                 xalign 0.5
-                spacing 150
 
-                textbutton _("Yes") action yes_action
-                textbutton _("No") action no_action
+                button:
+                    style_prefix "button"
+                    text "YES"
+                    action yes_action
+                button:
+                    style_prefix "button"
+                    text "NO"
+                    action no_action
 
     ## Right-click and escape answer "no".
     key "game_menu" action no_action
