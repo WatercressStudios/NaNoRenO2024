@@ -1,4 +1,4 @@
-﻿define config.layers = ['background', 'master', 'foreground', 'transient', 'screens', 'overlay' ]
+﻿define config.layers = ['background', 'master', 'foreground', 'fade', 'transient', 'screens', 'overlay' ]
 
 init python:
     import random
@@ -120,9 +120,43 @@ label test_train:
     $ train_speed = 2.0
     "Larger shadows. Was supposed to be trains, but might be better fit for buildings?"
 
+    # $ map_pos = station_info["3"]["pos"]
+    $ map_zoom = 4.0
+
     window hide
-    show screen map
+    show black onlayer fade:
+        xpos 1.0
+        linear 0.5 xpos 0
+    pause 0.5
+    show screen map(20, True) with dissolve
     pause
+    hide screen map with dissolve
+    pause 0.5
+
+    $ train_speed = 1.0
+    scene skybox_white
+    camera foreground at camera_transform_init
+
+    $ test_movingpoles = MovingImage("test_movingobject1", ypos=0, min_interval=10000, max_interval=10000, init_xoffset=0, out_xoffset=None)
+    $ test_movingpolesrandom = MovingImage("test_movingobject2", ypos=0, min_interval=0, max_interval=10000, init_xoffset=0, out_xoffset=None)
+    $ test_movingtrain = MovingImage("test_movingtrain", ypos=0, min_interval=0, max_interval=0, init_xoffset=-500, out_xoffset=500)
+
+    show bg1_closed onlayer foreground
+
+    # NOTE: Be sure to show oph shadow whenever her sprite is shown
+    show oph_shadow onlayer foreground
+    show oph a_normal onlayer foreground at oph_transform
+    
+    # NOTE: Be sure to show fre shadow whenever her sprite is shown
+    show fre_shadow onlayer foreground
+    show fre normal onlayer foreground at fre_transform
+    
+    show black onlayer fade:
+        xpos 0.0
+        linear 0.5 xpos -1.0
+    pause 0.5
+    hide black
+
     "Show map"
 
     return
