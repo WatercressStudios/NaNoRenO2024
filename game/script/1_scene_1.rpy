@@ -1,4 +1,6 @@
 label scene_1:
+    stop music fadeout 2.0
+    # AUDIO: ambience train station, not many people but can hear occasional train sounds
 
     #Scene 1 
     #Written by Wolf
@@ -21,15 +23,40 @@ label scene_1:
     pause
     hide text with dissolve
 
+    play music "music/Track 3.ogg"
     ###Fade into intro CG (if applicable, if not, NVL)
-    scene station_empty with fade:
-        zoom .8
-
+    scene station_empty
+    show text "{color=#FFFFFF}{size=50}Jacksonville Station":
+        align (0.49, 0.07)
+    camera:
+        align (0.5, 0.0) zoom 3
+    show black
+    hide black with Dissolve(2)
+    show station_oph behind text:
+        alpha 0
+        linear 2 alpha 1
+    camera:
+        align (0.5, 0.0) zoom 3
+        ease 2.0 align (0.0, 0.1) zoom 2
+    pause 2
     "C'moooon, Freya. This is your last chance! You missed the funeral, you better not miss the fuckin' train."
 
+    window hide
     ###Pace Ophelia's sprite back and forth
+    camera:
+        align (0.0, 0.1) zoom 2
+        ease 1.5 align (1.0, 0.1) zoom 2
+    pause 2
+    camera:
+        align (1.0, 0.1) zoom 2
+        ease 1.5 align (0.0, 0.1) zoom 2
+    pause 2
 
     "Aaaah... God! I hate this! The anticipation, the uncertainty, my hand in it all—I'm in for an {i}incredibly{/i} awkward cross-country trip if things keep going the way they are."
+
+    camera:
+        align (0.0, 0.1) zoom 2
+        ease 30 align (0.5, 0.5) zoom 1
 
     "...Of all things, why did you have to miss {i}her{/i} funeral?"
 
@@ -47,13 +74,11 @@ label scene_1:
 
     "That's who I should be right now."
 
-    scene station_oph with dissolve:
-        zoom .8
-
     "Slapping my face a bit, I stand up straight and put up my front."
 
     "Okay, Okay. Now, where could you be, Freya?"
 
+    # AUDIO: train horn
     "The train horn blows, signaling the final call."
 
     "We have a few minutes at most, Freya. So... please be here this time."
@@ -70,10 +95,18 @@ label scene_1:
 
     "Sighing, I grab my luggage tight and turn my back on Florida."
 
+    stop music fadeout 2.0
+    hide station_oph with Dissolve(2)
+
     "Well, goodbye, I guess."
 
-    scene station_oph with hpunch:
-        zoom .8
+    scene black with Dissolve(2)
+
+    play music "music/Track 2.ogg"
+    scene freya_intro_bg
+    show freya_intro with hpunch:
+        anchor (0.5, 0.5) pos (0.5, 0.3) zoom 1.5
+        ease 5 ypos 0.4
 
     fre "O-Ophelia?"
 
@@ -85,10 +118,13 @@ label scene_1:
 
     "{i}She's here.{/i}"
 
+    scene black with dissolve
+
     "In a rush, and for other more shameful reasons, I avoid looking at her and grab her by the wrist."
 
     oph "You're late, we gotta move!"
 
+    # AUDIO: running footsteps, cabin doors opening and closing
     "Pulling her—and her luggage—with me, we rush into our train car, down the aisle, and all the way back to our roomette."
 
     scene black with dissolve
@@ -113,7 +149,7 @@ label scene_1:
 
     "Quite the small room to share with someone I haven't seen in ten years."
 
-    "Continuing to avoid eye contact with her, I put our luggage away and out of sight."
+    "Continuing to avoid eye contact with her, I put my luggage away and out of sight."
 
     oph "Whew, you startled the fuck out of me, ya know that?"
 
@@ -123,10 +159,25 @@ label scene_1:
 
     "Hahh, okay. I guess this's it."
 
-    show oph nervous onlayer foreground at oph_transform
-    show oph_shadow onlayer foreground
+    show oph_shadow onlayer foreground:
+        alpha 0.0
+        linear 0.5 alpha 1
+    show oph nervous onlayer foreground at oph_transform:
+        alpha 0.0
+        linear 0.5 alpha 1
+    pause 0.5
 
-    "Turning around and collapsing into my seat, I let my breath catch up to me. Freya gently sits just across."
+    "Turning around and collapsing into my seat, I let my breath catch up to me. Freya is still stowing away her luggage."
+
+    show freya_intro_bg onlayer foreground:
+        alpha 0.0
+        linear 0.5 alpha 1
+    show freya_intro onlayer foreground:
+        anchor (0.5, 0.5) pos (0.5, 0.3) zoom 1.5 alpha 0
+        parallel:
+            ease 0.5 alpha 1
+        parallel:
+            ease 10 yalign 0.0
 
     "Looking up at her, I first notice her cute, stylish jacket and romper. A casual fit, it's kinda cottage-core but I dig it. It fits the Freya that I knew."
 
@@ -134,19 +185,22 @@ label scene_1:
 
     "I finally meet my eyes with hers, and..."
 
-    show fre_shadow onlayer foreground
-    show fre j_sad onlayer foreground at fre_transform
-    show oph surprised onlayer foreground
-
     "{i}Oh no, she's {b}hot{/b}.{/i}"
 
     "Like, {i}very{/i}."
 
-    show fre j_sad_ec onlayer foreground
-    show oph surprised_ec onlayer foreground
     "On days like these, it's a blessing that I'm so very gay."
 
+    show fre_shadow onlayer foreground
+    show fre j_sad_ec onlayer foreground at fre_transform
+    show oph surprised_ec onlayer foreground
+    hide freya_intro onlayer foreground
+    hide freya_intro_bg onlayer foreground with hpunch
+
     "No! Focus, Ophelia! Now's not the time!"
+
+    # AUDIO: train starts moving finally. is there a train horn again just before that?
+    # AUDIO: eventually settle into ambience of train moving
 
     $ test_movingpoles.set_show(True)
     $ test_movingpolesrandom.set_show(False)

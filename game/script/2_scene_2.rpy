@@ -1,5 +1,26 @@
 label scene_2:
     ######Map Transition - Jacksonville - Onboard map transition
+    stop music fadeout 2.0
+    # AUDIO: should we play an sfx while train map transitions from 1 station to another?
+
+    $ map_zoom = 3
+    window hide
+    show black onlayer fade:
+        xpos 1.0
+        linear 1 xpos 0
+    pause 1
+    show screen map(2, True) with dissolve
+    pause
+    hide screen map with dissolve
+    pause 0.5
+
+    # NOTE to Wolf: set up the cabin and sprites in here
+
+    show black onlayer fade:
+        xpos 0.0
+        linear 1 xpos -1.0
+    pause 1
+    hide black
 
     "So far, my plan hasn't been as successful as I hoped it'd be."
 
