@@ -119,4 +119,10 @@ label test_train:
     $ test_movingtrain.set_show(True)
     $ train_speed = 2.0
     "Larger shadows. Was supposed to be trains, but might be better fit for buildings?"
+
+    window hide
+    show screen map
+    pause
+    "Show map"
+
     return
