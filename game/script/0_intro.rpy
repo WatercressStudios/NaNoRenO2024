@@ -1,4 +1,5 @@
-﻿define e = Character("Eileen")
+﻿define fre = Character("Freya")
+define oph = Character("Ophelia")
 
 label start:
     $ GameLoop.start()
