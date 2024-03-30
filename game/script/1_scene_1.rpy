@@ -1,20 +1,29 @@
 label scene_1:
+
     #Scene 1 
     #Written by Wolf
 
     ###Large centered text on a pastel or watercolor background (if failing that, on a black bg)
 
-    "It's been ten years since we last met."
+    show text "{color=#FFFFFF}{size=50}It's been ten years since we last met.{/size}{/color}" with dissolve
+    pause
+    hide text with dissolve
+   
+    show text "{color=#FFFFFF}{size=50}And that's my fault.{/size}{/color}" with dissolve
+    pause
+    hide text with dissolve
 
-    ###On click, text fades out, new text fades in
+    show text "{color=#FFFFFF}{size=50}I wonder...{/size}{/color}" with dissolve
+    pause
+    hide text with dissolve
 
-    "And that's my fault."
-
-    "I wonder..."
-
-    "Is there still some place for me in her life?"
+    show text "{color=#FFFFFF}{size=50}Is there still some place for me in her life?{/size}{/color}" with dissolve
+    pause
+    hide text with dissolve
 
     ###Fade into intro CG (if applicable, if not, NVL)
+    scene station_empty with fade:
+        zoom .8
 
     "C'moooon, Freya. This is your last chance! You missed the funeral, you better not miss the fuckin' train."
 
@@ -38,6 +47,9 @@ label scene_1:
 
     "That's who I should be right now."
 
+    scene station_oph with dissolve:
+        zoom .8
+
     "Slapping my face a bit, I stand up straight and put up my front."
 
     "Okay, Okay. Now, where could you be, Freya?"
@@ -60,6 +72,9 @@ label scene_1:
 
     "Well, goodbye, I guess."
 
+    scene station_oph with hpunch:
+        zoom .8
+
     fre "O-Ophelia?"
 
     ###Ophelia's sprite should jump out of its skin right here
@@ -76,6 +91,24 @@ label scene_1:
 
     "Pulling her—and her luggage—with me, we rush into our train car, down the aisle, and all the way back to our roomette."
 
+    scene black with dissolve
+
+    $ train_speed = 1.0
+    scene skybox_white
+    camera foreground at camera_transform_init
+
+    $ test_movingpoles = MovingImage("test_movingobject1", ypos=0, min_interval=10000, max_interval=10000, init_xoffset=0, out_xoffset=None)
+    $ test_movingpolesrandom = MovingImage("test_movingobject2", ypos=0, min_interval=0, max_interval=10000, init_xoffset=0, out_xoffset=None)
+    $ test_movingtrain = MovingImage("test_movingtrain", ypos=0, min_interval=0, max_interval=0, init_xoffset=-500, out_xoffset=500)
+
+    show bg2_closed onlayer foreground
+    
+    show black onlayer foreground:
+        alpha 1.0
+        linear 1 alpha 0.0
+    pause 1
+    hide black
+
     "Still in a rush, I open the door and glance at what our bereavement bought us: A couple of seats foldable into a bed, a bunk up top, and a collapsed tray table in the wall between."
 
     "Quite the small room to share with someone I haven't seen in ten years."
@@ -90,6 +123,9 @@ label scene_1:
 
     "Hahh, okay. I guess this's it."
 
+    show oph nervous onlayer foreground at oph_transform
+    show oph_shadow onlayer foreground
+
     "Turning around and collapsing into my seat, I let my breath catch up to me. Freya gently sits just across."
 
     "Looking up at her, I first notice her cute, stylish jacket and romper. A casual fit, it's kinda cottage-core but I dig it. It fits the Freya that I knew."
@@ -98,74 +134,130 @@ label scene_1:
 
     "I finally meet my eyes with hers, and..."
 
+    show fre_shadow onlayer foreground
+    show fre j_sad onlayer foreground at fre_transform
+    show oph surprised onlayer foreground
+
     "{i}Oh no, she's {b}hot{/b}.{/i}"
 
     "Like, {i}very{/i}."
 
+    show fre j_sad_ec onlayer foreground
+    show oph surprised_ec onlayer foreground
     "On days like these, it's a blessing that I'm so very gay."
 
     "No! Focus, Ophelia! Now's not the time!"
 
+    $ test_movingpoles.set_show(True)
+    $ test_movingpolesrandom.set_show(False)
+    $ test_movingtrain.set_show(False)
+    camera foreground at camera_transform(shake=1, zoom=1.01)
+    
+    show oph nervous onlayer foreground
     oph "It's, uhh, been a long time, hasn't it?"
 
+    camera foreground at camera_transform(shake=0.5, zoom=1.01)
+
+    show oph sad onlayer foreground
     fre "...Yeah. It has."
 
+    show oph smile onlayer foreground
     oph "Well, I have to say, you look fucking {i}stunning{/i}."
 
+    show fre j_embarrassed onlayer foreground
     "Freya awkwardly smiles, embarrassed by the compliment."
 
+    show oph smile_ar onlayer foreground
     oph "Like, {i}really{/i}. You're more... {i}you{/i} than I've ever seen you."
 
+    $ test_movingpoles.set_show(False)
+    camera foreground at camera_transform(shake=0.1, zoom=1.01)
+
+    show fre j_embarrassed_smile onlayer foreground
     "She curls up, trying to hide her happiness behind her closed hands."
 
+    show fre j_embarrassed onlayer foreground
     "Cute."
 
+    show oph nervous_b onlayer foreground
     oph "So, what've you been up to, over here in the \"sunshine state\"?"
 
+    show fre j_scoff onlayer foreground
     "She scoffs, just as aware as I am that Florida is anything but."
 
+    show fre j_nervous onlayer foreground
     fre "Enjoying what I can. Jacksonville... could be worse, I suppose."
 
+    show oph disbelief onlayer foreground
     oph "Could it? Could it {i}really{/i}?"
 
+    show fre j_smile onlayer foreground
     "Freya laughs, shaking her head."
 
+    show fre j_normal onlayer foreground
+    show oph normal onlayer foreground
     fre "No, I guess not."
 
+    show oph sad onlayer foreground
     oph "You at least find something fun to pass the time?"
 
+    show oph disbelief onlayer foreground
+    show fre j_normal_ec onlayer foreground
     fre "Ehh, I've been serving for a while if that counts. It pays the bills at least."
 
+    show fre j_normal onlayer foreground
+    show oph disbelief_ec onlayer foreground
     oph "Oh dear."
 
+    show oph normal onlayer foreground
+    show fre j_normal_ec onlayer foreground
     "She shrugs."
 
+    show fre j_scoff onlayer foreground
+    show oph disbelief_ec onlayer foreground
     fre "Could be worse."
 
+    show oph nervous_b onlayer foreground
+    show fre j_scoff
     oph "You keep saying that."
 
+    show oph normal onlayer foreground
+    show fre j_sad onlayer foreground
     oph "Well, you'll be out of that place soon enough. I'm not going to lie to you—one of my goals here is to convince you to move to Oregon."
 
+    show oph smile_ar onlayer foreground
     oph "It's better for you in many, many ways."
 
+    show fre j_sad_ec onlayer foreground
     "She winces, retreating."
 
     fre "That's..."
 
+    show fre j_nervous_b onlayer foreground
+    show oph normal onlayer foreground
     oph "A big ask? I know. But if I have my way, all of your concerns will be addressed by the time we hit the ground in Portland."
 
+    show oph cheeky onlayer foreground
     oph "And I'm confident that I can be pretty convincing..."
 
+    show fre j_scoff onlayer foreground
     "I wink at her, and she rolls her eyes."
 
+    show fre j_normal onlayer foreground
+    show oph normal onlayer foreground
     fre "Good to see you haven't changed at all."
 
+    show oph smile onlayer foreground
     oph "And neither have you. Well, outside of the obvious. Deep down, you're the Freya I've always loved. Just, now your outside matches what was always on the inside."
 
+    show oph happy onlayer foreground
+    show fre j_embarrassed onlayer foreground
     oph "But! Bathing you in compliments won't get you to stay with me."
 
+    show fre j_embarrassed_ec onlayer foreground
     oph "Making up for lost time will."
-
+    
+    show fre j_embarrassed onlayer foreground
     "Right?"
 
     ###End Scene 1
