@@ -230,7 +230,7 @@ label scene_5:
 
     oph "She's the one who taught me who I wanted to be. If I can reach even a fraction, I think I'll be happy with that."
 
-    fre "Grandma was always wonderful. I'm... I'm sorry I wasn't there for her as much as I should've been.
+    fre "Grandma was always wonderful. I'm... I'm sorry I wasn't there for her as much as I should've been."
 
     oph "What do you mean, Freya? You're the one who didn't fuck off across the country."
 
