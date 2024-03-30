@@ -147,5 +147,5 @@ label scene_8:
 
     ##End Scene 8
 
-    # jump credits
+    call screen credits
     return
