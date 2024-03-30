@@ -1,5 +1,6 @@
 ﻿define fre = Character("Freya")
 define oph = Character("Ophelia")
+define gra = Character("Grandma")
 
 label start:
     $ GameLoop.start()
