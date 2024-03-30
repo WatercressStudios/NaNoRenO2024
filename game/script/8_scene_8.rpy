@@ -147,5 +147,7 @@ label scene_8:
 
     ##End Scene 8
 
+    $ quick_menu = False
+    window hide
     call screen credits
     return

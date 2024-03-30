@@ -10,112 +10,123 @@ init python:
     credits_duration = 30.0
     credits_height = 3600
     credits_content = [
-        ( "Developed for Winter Visual Novel Jam 2023",
+        ( "Developed for Nanoreno 2024.",
             [
             ]
         ),
-        ( "Story",
+        ( "Creative Director",
             [
-                "Kevin Bomer",
-                "Dana Reynolds",
-                "Hamadyne",
+                "Wolf",
+                "Val Sørseth",
             ]
         ),
-        ( "Music & Sound Design",
+        ( "Writing & Editing",
+            [
+                "Wolf",
+                "Val Sørseth",
+                "Zodai",
+                "Jared Jensen",
+                "Churlatte",
+            ]
+        ),
+        ( "Audio",
             [
                 "Paul Robins",
             ]
-        ),
-        ( "Voice Director",
-            [
-                "Ariane Marchese",
-            ]
-        ),
-        ( "Voice Acting",
-            [
-                (
-                    "Aldebrand",
-                    "Nickeem",
-                ),
-                (
-                    "Herleva",
-                    "Gina Leigh Smith",
-                ),
-                (
-                    "Glacia",
-                    "Sara Seferian",
-                ),
-                (
-                    "Pierre",
-                    "Corey Katona",
-                ),
-                (
-                    "Herald",
-                    "Nathan Morrison",
-                ),
-                (
-                    "Tavernkeep",
-                    "Andreas S",
-                ),
-                (
-                    "Passerby 1",
-                    "Gary Yeung",
-                ),
-                (
-                    "Passerby 2",
-                    "RaycherVO",
-                ),
-            ]
-        ),
-        ( "Voice Editing",
-            [
-                "Brad \"EchoFrost\" Whitesell",
-            ]
+            # [
+            #     (
+            #         "Music Director",
+            #         "Paul Robins",
+            #     ),
+            #     (
+            #         "Music",
+            #         "Paul Robins",
+            #     ),
+            #     # (
+            #     #     "Sound Design",
+            #     #     "Maddie Anderson",
+            #     # ),
+            #     # (
+            #     #     "Sound Editing",
+            #     #     "Paul Robins",
+            #     #     "Tristan \"Wolf\" Barber",
+            #     # ),
+            # ]
         ),
         ( "Art",
             [
                 (
-                    "Sprite Art",
-                    "Hamu",
+                    "Art Director",
+                    "Alison \"Draz\" Huang",
                 ),
                 (
-                    "Mural CG",
-                    "KartP",
+                    "Sprite Art",
+                    "Plate",
                 ),
                 (
                     "BG Art",
-                    "Likhos",
+                    "Imagibeat Studio",
                 ),
                 (
-                    "Character Concept",
-                    "Dana Reynolds",
+                    "Concept Art",
+                    "Shahar \"Voiderling\" Hod",
                 ),
                 (
-                    "UI Design & Art",
-                    "Sagittaeri",
+                    "UI Design and Art",
+                    "Brad \"EchoFrost\" Whitesell",
+                ),
+                (
+                    "Logo Design",
+                    "Imagibeat Studio",
+                ),
+                (
+                    "Additional Art",
+                    "Alison \"Draz\" Huang",
                 ),
             ]
         ),
-        ( "Programming",
+        ( "Code",
             [
+                (
+                    "Coding Director",
+                    "Sagittaeri",
+                ),
+                (
+                    "UI",
+                    "Brad \"EchoFrost\" Whitesell",
+                ),
+            ]
+        ),
+
+        ( "Ren'py Scripting",
+            [
+                "Wolf",
+                "Val Sørseth",
                 "Sagittaeri",
                 "Brad \"EchoFrost\" Whitesell",
             ]
         ),
-        ( "Scripting & Animation",
+        ( "Marketing",
             [
-                "Kevin Bomer",
-                "Sagittaeri",
+                "Wolf",
+                "Val Sørseth",
             ]
         ),
         ( "Special thanks to",
             [
                 "Ren'py Tom",
                 "The Lemmasoft Forum",
-                "Organizers of Winter Visual Novel Jam 2023",
+                "Our Fans",
+                "Aniki",
+                # "r/egg_irl",
+                # "NASA Jet Propulsion Laboratory",
             ]
         ),
-
+        ( "A thank you to all of our Patrons, including",
+            [
+                "Jonas Lee",
+            ]
+        ),
     ]
 
 
@@ -149,7 +160,7 @@ screen credits():
                     xalign 0.5
                     font gui.name_text_font
                     size 50
-                    color "#71ddf8"
+                    color "#2879bb"
                 for name in names:
                     if type(name) == type(()):
                         hbox:
@@ -164,7 +175,7 @@ screen credits():
                                     xalign 1.0
                                     # font gui.name_text_font
                                     size 30
-                                    color "#fff"
+                                    color "#ccd1d5"
                             null width 50
                             frame:
                                 background None
@@ -178,12 +189,12 @@ screen credits():
                                             xalign 0.0
                                             # font gui.name_text_font
                                             size 30
-                                            color "#fff"
+                                            color "#ccd1d5"
                     else:
                         text name:
                             text_align 0.5
                             xalign 0.5
                             # font gui.name_text_font
                             size 30
-                            color "#fff"
+                            color "#ccd1d5"
             null height 4000
