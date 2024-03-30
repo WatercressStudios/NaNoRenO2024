@@ -16,9 +16,31 @@ init python:
 
     ##### OPHELIA #####
     MapEmote('oph normal', 'oph default base md_default ed_default brow_default')
-    
+    MapEmote('oph nervous', 'oph default guarded md_default ed_sad brow_default sweat')
+    MapEmote('oph surprised', 'oph default guarded mdo_surprised ed_surprised brow_default blush sweat')
+    MapEmote('oph surprised_ec', 'oph default guarded mdo_surprised ec_default brow_default blush sweat')
+    MapEmote('oph nervous_b', 'oph default base md_default ed_sad brow_default sweat')
+    MapEmote('oph disbelief', 'oph default base mdo_surprised ed_default brow_relaxed')
+    MapEmote('oph disbelief_ec', 'oph default base mdo_surprised ec_default brow_relaxed sweat')
+    MapEmote('oph smile', 'oph default base md_smile ed_default brow_default')
+    MapEmote('oph smile_ar', 'oph default armrest md_smile ed_default brow_default')
+    MapEmote('oph cheeky', 'oph default base md_smile ec_smile brow_default')
+    MapEmote('oph sad', 'oph default guarded md_default ed_sad brow_sad sweat')
+    MapEmote('oph happy', 'oph default base mdo_surprised ec_smile brow_default')
+
+
 
     ##### FREYA #####
     # j_ = with jacket
-    MapEmote('fre normal', 'fre default basejacket md_default ed_default brow_default')
-    MapEmote('fre j_normal', 'fre default jacket md_default ed_default brow_default')
+    MapEmote('fre normal', 'fre default base md_default ed_default brow_default')
+    MapEmote('fre j_normal', 'fre default basejacket md_default ed_default brow_default')
+    MapEmote('fre j_normal_ec', 'fre default basejacket md_default ec_default brow_default')
+    MapEmote('fre j_sad', 'fre default guardedjacket md_sad ed_sad brow_sad sweat')
+    MapEmote('fre j_sad_ec', 'fre default guardedjacket md_sad ec_default brow_sad sweat')
+    MapEmote('fre j_embarrassed', 'fre default guardedjacket md_smile ed_sad brow_sad sweat')
+    MapEmote('fre j_embarrassed_ec', 'fre default guardedjacket md_smile ec_default brow_sad sweat')
+    MapEmote('fre j_embarrassed_smile', 'fre default guardedjacket md_smile ec_smile brow_sad blush sweat')
+    MapEmote('fre j_scoff', 'fre default guardedjacket mdo_surprised ec_default brow_relaxed')
+    MapEmote('fre j_nervous', 'fre default guardedjacket md_smile ed_default brow_sad')
+    MapEmote('fre j_nervous_b', 'fre default basejacket md_sad ed_sad brow_sad sweat')
+    MapEmote('fre j_smile', 'fre default basejacket md_smile ec_smile brow_relaxed')
