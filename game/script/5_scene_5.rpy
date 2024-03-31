@@ -268,19 +268,29 @@ label scene_5:
     o "I still think about her, whenever I'm down. It always cheers me up a little."
 
     nvl clear
+
+    show bg1_open onlayer foreground with dissolve
     
     ##monologue ends here, back to regular narration. End NVL
 
     "I take a sip of my water, then set the bottle back down."
 
+    show oph e_smile onlayer foreground at oph_transform with dissolve
+    show fre e_smile_ec onlayer foreground at fre_transform with dissolve
+
     oph "She's the one who taught me who I wanted to be. If I can reach even a fraction, I think I'll be happy with that."
 
+    show fre e_sad_mo onlayer foreground
     fre "Grandma was always wonderful. I'm... I'm sorry I wasn't there for her as much as I should've been."
 
+    show oph surprised_ec onlayer foreground
+    show fre e_sad onlayer foreground
     oph "What do you mean, Freya? You're the one who didn't fuck off across the country."
 
+    show oph sad onlayer foreground
     fre "I got stressed, really."
 
+    show fre e_sad_mo onlayer foreground
     fre "Seeing her as the dementia got worse, it was like... it felt like one of the few real supports I had was going away."
 
     fre "I couldn't help but cry over it."
@@ -289,26 +299,36 @@ label scene_5:
 
     fre "I felt like I was coming apart at the seams."
 
+    show fre sad onlayer foreground
     fre "And I feel guilty, because... if only I were a better person, I'd have been able to see her again."
 
+    show fre sad_ec onlayer foreground
     fre "I always told myself I'd go check on her when I felt ready. Then one day, she was just gone."
 
     fre "I'm ashamed of not being good enough. I dunno how I'm supposed to feel about that."
 
+    show oph smile onlayer foreground
+    show fre sad onlayer foreground
     oph "If she were here now, she'd probably ruffle your head around and tell you not to worry."
 
     oph "Nobody needs to be perfect. Life'd be miserable if we beat ourselves up over every little thing."
 
+    show oph normal onlayer foreground
     oph "It's not about always needing to be your best. If you have an off day, then that's okay."
 
+    show oph e_sigh onlayer foreground
     oph "But... it's hard to keep moving forward if you aren't able to forgive yourself too, you know?"
 
+    show oph e_smile onlayer foreground
+    show fre normal onlayer foreground
     oph "So don't worry. If there's anything after all of this, Grandma'd be laughing her ass off with grandpa and all her old friends."
 
     oph "And even if you could've been around more, I'm sure she'd be thankful for having you for so long. Alright?"
 
+    show fre sad onlayer foreground
     fre "That's... Yeah."
 
+    show fre e_sad_smile onlayer foreground
     "Freya turns her head down, then rubs her eyes."
     
     fre "Thank you, Ophelia."
@@ -317,38 +337,50 @@ label scene_5:
     stop music fadeout 4.0
     ####End Zodai's Grandma Scene
 
+    show oph e_smile_b onlayer foreground
     oph "Any time, Frey. I'm here for you, and I'm not going to change any time soon."
 
+    show oph nervous onlayer foreground
+    show fre e_normal onlayer foreground
     oph "And..."
 
+    show oph nervous_b onlayer foreground
     "This is the best chance I'll get to clear the air. To tell her why I stopped talking to her."
 
     "To apologize, from the bottom of my heart."
 
+    show oph nervous onlayer foreground
     "I take a deep breath, and continue."
 
+    show oph sad onlayer foreground
     oph "I think I get why you missed her funeral, now. Wanting to remember her as she was... being afraid of accepting it—and you probably didn't want to see me too much, either."
 
+    show fre normal_ec onlayer foreground
     "Freya avoids looking at me, simply nodding."
 
     "I can tell, one word and she'll fall apart."
 
     "I understand. Oh God, do I understand."
 
+    show fre nervous_b onlayer foreground
     oph "Like you, I always wanted to visit her. Like you, I always held it off, until it was too late."
 
+    show oph embarrassed_mo onlayer foreground
     oph "...And I felt the same with you."
 
     oph "I always wanted to talk to you."
 
+    show oph embarrassed onlayer foreground
     oph "I have so many draft messages, like time capsules for each day, each month, each year—all unsent."
 
     oph "But every time I talked with you, it hurt more, and more and more. I felt like I had lost something."
 
     oph "Like something was torn from me."
 
+    show oph e_sigh onlayer foreground
     "I sigh, a ragged sigh, holding my own emotions at bay."
 
+    show oph e_sad_mo onlayer foreground
     oph "\"What could have been.\""
 
     oph "I couldn't move forward, because I was trapped in the past. My body was in Portland, but my soul was in Jacksonville."
@@ -357,53 +389,72 @@ label scene_5:
 
     oph "Slowly, I texted you less and less. I numbed myself. Forced myself to make new friends, to do whatever I could to fit in to my new circumstance."
 
+    show oph e_sad onlayer foreground
     oph "Otherwise... I don't think I would have survived."
 
+    show oph e_surprised onlayer foreground
     oph "And I finally found friends! A home! Somewhere to belong! A band, and a rather successful one."
 
     oph "No fights, no drama, just family."
 
+    show oph e_sad onlayer foreground
     oph "One I wanted to introduce to you, one day."
 
     oph "But that all ended when our lead singer, the soul of the band, passed away."
 
+    show oph e_sad_mo onlayer foreground
     oph "It just wasn't the same. We split up, and for years, I was a zombie... and I missed that funeral."
 
     oph "But I couldn't miss this one. I knew that I couldn't keep making the same stupid fucking mistakes."
 
     oph "It was a hail mary, trying to crawl my way back."
 
+    show oph e_sad onlayer foreground
     oph "And you did it. Despite every reason in the world, you came back to me."
 
+    show oph e_normal onlayer foreground
     oph "I came back to you, and you came back to me."
 
     oph "In a million other timelines, a million other decisions, we may never have had this chance."
 
     oph "But here, now, we do."
 
+    show fre sad onlayer foreground
+    show oph e_sad_mo onlayer foreground
     oph "I'm sorry. I'm so, so sorry. I hurt you. I hurt you {b}a lot{/b}."
 
+    show oph e_sad onlayer foreground
     oph "And you still gave me a chance."
 
+    show oph e_sad_mo onlayer foreground
     oph "But that's you, isn't it, Frey?"
 
+    show oph e_normal onlayer foreground
     oph "No matter what, you give people a chance."
 
+    show oph e_embarrassed_p onlayer foreground
     oph "And that's one of the countless reasons why..."
 
+    show oph e_embarrassed onlayer foreground
     oph "I love you."
 
+    show fre shocked onlayer foreground
     "Her gaze jumps back to me, the weight of my words heavy on her."
 
+    show fre shocked_b onlayer foreground
     fre "I..."
 
+    show fre embarrassed_b onlayer foreground
     "She struggles, unable to find the right words. In the end, no words are necessary. She lunges forward, embracing me in a hug so tight it's as if she's trying to hold me down, to keep me from running away again."
 
     "She whispers, faintly, into my ear."
 
+    show fre embarrassed_mo onlayer foreground
     fre "I love you too."
 
     fre "And I'm sorry too."
+
+    scene black onlayer foreground with dissolve
 
     "With that, we do nothing but hold each other for what feels like hours."
 
