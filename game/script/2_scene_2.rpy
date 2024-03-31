@@ -11,6 +11,10 @@ label scene_2:
     pause 1
     show screen map(2, True) with dissolve
     pause
+    show screen map(3, True) with dissolve
+    pause
+    show screen map(4, True) with dissolve
+    pause
     hide screen map with dissolve
     pause 0.5
 
