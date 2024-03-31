@@ -13,10 +13,10 @@ label scene_6:
     show bg2_closed onlayer foreground
 
     show fre_shadow onlayer foreground
-    show fre normal onlayer foreground at fre_transform
+    show fre smile onlayer foreground at fre_transform
 
     show oph_shadow onlayer foreground
-    show oph normal onlayer foreground at oph_transform
+    show oph smile onlayer foreground at oph_transform
 
     show black onlayer fade:
         xpos 0.0
