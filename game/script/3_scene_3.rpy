@@ -6,7 +6,8 @@ label scene_3:
     show black onlayer fade:
         xpos 1.0
         linear 1 xpos 0
-    pause 1
+    pause 1 
+    play sound "sfx/Train Map.ogg"
     show screen map(5, True) with dissolve
     pause
     show screen map(6, True) with dissolve
@@ -17,7 +18,7 @@ label scene_3:
     pause
     hide screen map with dissolve
     pause 0.5
-
+    play music "music/Track 3.ogg" fadein 2.0
     show black onlayer fade:
         xpos 0.0
         linear 1 xpos -1.0
@@ -75,7 +76,7 @@ label scene_3:
     #NOTE: I'm leaving the previous text unscripted (for now) since they belong to the as-of-yet unfinished bed CG.
     #If I get everything else done, I'll wrap around and do some basic scripting.
     #~Wolf
-
+    stop music fadeout 4.0
     window hide
     show black onlayer fade:
         xpos 1.0
@@ -100,7 +101,7 @@ label scene_3:
     show fre normal onlayer foreground
     show oph normal onlayer foreground
     "Sitting down in the same dining car booth as yesterday, I look out the window, getting my bearings straight on just where we are."
-
+    play music "music/Track 7.ogg" fadein 2.0
     show oph e_smile onlayer foreground
     "Vast pine woods flicker by, bringing a surge of memories from our early high school days."
     
@@ -182,7 +183,7 @@ label scene_3:
     oph "She made us promise not to tell Mom! Oh, she would have been livid if she had ever found out."
 
     "As we laugh and reminisce, the conductor announces our arrival into San Antonio."
-
+    stop music fadeout 4.0
     show fre normal onlayer foreground
     show oph e_normal onlayer foreground
     "We gather our things and get off the train. I check the notice boards and find our connecting train."
@@ -203,6 +204,7 @@ label scene_3:
         xpos 1.0
         linear 1 xpos 0
     pause 1
+    play sound "sfx/Train Map.ogg"
     show screen map(9, True) with dissolve
     pause
     hide screen map with dissolve
@@ -312,9 +314,9 @@ label scene_3:
     ####All of the below is side sprites, and a missing CG. TBD
     ####~Wolf
     $ hide_sides = []
-
+    
     oph sad "Looks like the top bunk isn’t stuck this time!"
-
+    play music "music/Track 8.ogg" fadein 2.0
     "I can’t help being disappointed by the apparent news that Ophi and I will be sleeping in separate beds tonight. I can’t let her see it though."
 
     fre nervous "Maybe you’ll sleep better tonight."
@@ -354,7 +356,7 @@ label scene_3:
     "I run my fingers through her gorgeous, flowing hair, pushing it behind her ear."
 
     fre "I could stay like this forever."
-
+    stop music fadeout 4.0
     ###End Scene 3
     jump scene_4
 

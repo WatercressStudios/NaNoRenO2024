@@ -7,6 +7,7 @@ label scene_7:
         xpos 1.0
         linear 1 xpos 0
     pause 1
+    play sound "sfx/Train Map.ogg"
     show screen map(17, True) with dissolve
     pause
     show screen map(18, True) with dissolve
@@ -35,7 +36,7 @@ label scene_7:
 
     $ hide_sides = ['Freya', 'Ophelia']
 
-
+    play music "music/Track 4.ogg" fadein 2.0
     ###Scene 7
 
     "I awaken to the familiar rattling of the tracks as the miles continue to pass by."
@@ -217,5 +218,5 @@ label scene_7:
     oph "What can I say? I was born this way."
 
     ###End scene 7
-
+    stop music fadeout 4.0
     jump scene_8

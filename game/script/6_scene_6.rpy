@@ -23,7 +23,7 @@ label scene_6:
         linear 1 xpos -1.0
     pause 1
     hide black onlayer fade
-
+    play music "music/track 3.ogg" fadein 2.0
     $ hide_sides = ['Freya', 'Ophelia']
 
     "Taking our seats in our roomette, we bask in the glow of the west coast."
@@ -107,7 +107,7 @@ label scene_6:
     "Tomorrow'll be the day."
 
     "Tomorrow, the rest of my life will be decided."
-
+    stop music fadeout 4.0
     ##End Scene 6
 
     jump scene_7
