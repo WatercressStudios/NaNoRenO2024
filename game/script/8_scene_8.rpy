@@ -26,6 +26,7 @@ label scene_8:
     # show oph_shadow onlayer foreground
     # show oph normal onlayer foreground at oph_transform
     play music "music/Track 6.ogg" fadein 2.0
+    play env "sfx/Train.ogg" fadein 2.0
     show black onlayer fade:
         xpos 0.0
         linear 1 xpos -1.0
@@ -201,7 +202,7 @@ label scene_8:
     "Portland, huh?"
 
     "I think I'm gonna like it here."
-
+    stop env fadeout 4.0
     ##End Scene 8
 
     $ quick_menu = False

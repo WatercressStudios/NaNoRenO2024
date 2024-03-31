@@ -24,6 +24,7 @@ label scene_1:
     hide text with dissolve
 
     play music "music/Track 3.ogg"
+    play env "sfx/Quiet Platform.ogg" fadein 1.0
     ###Fade into intro CG (if applicable, if not, NVL)
     scene station_empty
     show text "{color=#FFFFFF}{size=50}Jacksonville Station":
@@ -123,10 +124,10 @@ label scene_1:
     "In a rush, and for other more shameful reasons, I avoid looking at her and grab her by the wrist."
 
     oph "You're late, we gotta move!"
-
+    stop env fadeout 1.0
     # AUDIO: running footsteps, cabin doors opening and closing
     "Pulling her—and her luggage—with me, we rush into our train car, down the aisle, and all the way back to our roomette."
-
+    
     scene black with dissolve
 
     $ train_speed = 1.0
@@ -198,10 +199,10 @@ label scene_1:
     hide freya_intro_bg onlayer foreground with hpunch
 
     "No! Focus, Ophelia! Now's not the time!"
-
+    play sound "sfx/Train Leave.ogg"
     # AUDIO: train starts moving finally. is there a train horn again just before that?
     # AUDIO: eventually settle into ambience of train moving
-
+    play env "sfx/Train.ogg" fadein 2.0
     $ test_movingpoles.set_show(True)
     $ test_movingpolesrandom.set_show(False)
     $ test_movingtrain.set_show(False)
@@ -313,6 +314,6 @@ label scene_1:
     
     show fre j_embarrassed onlayer foreground
     "Right?"
-
+    stop env fadeout 5.0
     ###End Scene 1
     jump scene_2

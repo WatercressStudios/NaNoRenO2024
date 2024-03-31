@@ -25,7 +25,7 @@ label scene_6:
     hide black onlayer fade
     play music "music/track 3.ogg" fadein 2.0
     $ hide_sides = ['Freya', 'Ophelia']
-
+    play env "sfx/Train.ogg" fadein 2.0
     "Taking our seats in our roomette, we bask in the glow of the west coast."
 
     "It's fantastic. Beautiful. So utterly... home."
@@ -108,6 +108,7 @@ label scene_6:
 
     "Tomorrow, the rest of my life will be decided."
     stop music fadeout 4.0
+    stop env fadeout 4.0
     ##End Scene 6
 
     jump scene_7
