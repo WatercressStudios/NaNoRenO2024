@@ -96,7 +96,7 @@ label scene_3:
         xpos 0.0
         linear 1 xpos -1.0
     pause 1
-    hide black
+    hide black onlayer fade
 
     show fre normal onlayer foreground
     show oph normal onlayer foreground
