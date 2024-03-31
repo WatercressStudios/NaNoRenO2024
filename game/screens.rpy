@@ -111,9 +111,9 @@ screen say(who, what):
     if not renpy.variant("small"):
         if not who in hide_sides:
             if who == 'Freya':
-                add SideImage() pos (-0.07, 0.65)
+                add SideImage() pos (-0.02, 0.65)
             elif who == 'Ophelia':
-                add SideImage() pos (0.36, 0.55)
+                add SideImage() pos (0.33, 0.55)
 
 
 ## Make the namebox available for styling through the Character object.

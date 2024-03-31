@@ -97,7 +97,11 @@ label scene_3:
         linear 1 xpos -1.0
     pause 1
     hide black
+    
     play env "sfx/Train.ogg" fadein 2.0
+    
+    hide black onlayer fade
+    
     show fre normal onlayer foreground
     show oph normal onlayer foreground
     "Sitting down in the same dining car booth as yesterday, I look out the window, getting my bearings straight on just where we are."

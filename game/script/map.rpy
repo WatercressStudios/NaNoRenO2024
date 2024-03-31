@@ -234,7 +234,7 @@ screen map(index=2, animate=False):
                 text_size 60
                 text_bold True
                 text_color gui.accent_color
-                text_outlines [ (5, gui.selected_color, 0, 0) ]
+                text_outlines [ (5,  "#fff", 0, 0) ]
 
             frame at map_text_transform((0.5, 0.5), duration=hide_duration, delay=0.5):
                 background im.FactorScale("cgs/map_description_frame.png", width=2.7, height=1.2)
@@ -252,4 +252,4 @@ screen map(index=2, animate=False):
                 text_size 60
                 text_bold True
                 text_color gui.accent_color
-                text_outlines [ (5, gui.selected_color, 0, 0) ]
+                text_outlines [ (5, "#fff", 0, 0) ]
