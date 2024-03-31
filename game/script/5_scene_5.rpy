@@ -22,7 +22,7 @@ label scene_5:
         linear 1 xpos -1.0
     pause 1
     hide black
-
+    play env "sfx/Train.ogg" fadein 2.0
     "Ohmygodohmygodohmygod"
 
     "Did last night really happen?"
@@ -410,7 +410,7 @@ label scene_5:
     "Ten years of longing. Ten years of time."
 
     "Time that we'll make up for, together."
-
+    stop env fadeout 4.0
     ##End Scene 5
 
     ###Map Transition - Los Angeles
@@ -431,7 +431,7 @@ label scene_5:
     ####NVL Format!
 
     scene black onlayer foreground with dissolve
-
+    play env "sfx/City.ogg" fadein 2.0
     n "Stepping off the train in LA is promising. No, it isn't the city itself, I hadn't seen any part of it yet. But Freya is at my side, blushing terribly at how easily our fingers intertwine."
 
     n "So yeah, life is going pretty well."
@@ -547,7 +547,7 @@ label scene_5:
     n "We get back on the train, ready for the journey ahead."
 
     n "But my heart is already beginning to sink. Because I'm not ready for this trip to end."
-
+    stop env fadeout 4.0
     ####End Jared's Los Angeles Scene
     ####End NVL
     jump scene_6

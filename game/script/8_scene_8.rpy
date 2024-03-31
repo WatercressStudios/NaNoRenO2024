@@ -36,6 +36,13 @@ label scene_8:
         align (0.5, 0.0) zoom 3
 
     play music "music/Track 6.ogg" fadein 2.0
+    play env "sfx/Train.ogg" fadein 2.0
+    
+    show black onlayer fade:
+        xpos 0.0
+        linear 1 xpos -1.0
+    pause 1
+    hide black onlayer fade
     # show black onlayer fade:
     #     xpos 0.0
     #     linear 1 xpos -1.0
@@ -244,7 +251,7 @@ label scene_8:
     "Portland, huh?"
 
     "I think I'm gonna like it here."
-
+    stop env fadeout 4.0
     ##End Scene 8
 
     $ quick_menu = False

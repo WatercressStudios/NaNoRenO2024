@@ -41,7 +41,8 @@ label scene_7:
 
     # $ hide_sides = ['Freya', 'Ophelia']
 
-    play music "music/Track 4.ogg" fadein 2.0
+
+    play env "sfx/Train.ogg" fadein 2.0
     ###Scene 7
 
     "I awaken to the familiar rattling of the tracks as the miles continue to pass by."
@@ -54,10 +55,13 @@ label scene_7:
 
     "Her slightly damp hair reveals where she's been."
 
+    play music "music/Track 4.ogg" fadein 2.0
+    
+    fre "Hey, you."
+
     $ hide_sides = []
 
     fre smile "Hey, you."
-
     oph smile "Morning! I didn't wake you, did I?"
 
     fre "Nope, but I did just wake up a couple minutes ago."
@@ -266,4 +270,5 @@ label scene_7:
 
     ###End scene 7
     stop music fadeout 4.0
+    stop env fadeout 4.0
     jump scene_8

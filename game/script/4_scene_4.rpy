@@ -20,7 +20,7 @@ label scene_4:
         linear 1 xpos -1.0
     pause 1
     hide black
-
+    
     "The squealing brakes of the train wake me from my impromptu nap as the conductor announces a fresh air break."
 
     "I nudge Ophi, rousing her."
@@ -43,7 +43,7 @@ label scene_4:
     camera foreground:
         ease 2.0 align (0.5, 0.5) zoom 1.5
     pause 2
-
+    play env "sfx/Remote Station.ogg" fadein 2.0
     "We clamber out of the train, and out onto the platform of the remote station."
 
     "Ophi continues stretching, taking advantage of the open space we don’t have inside the train."
@@ -111,14 +111,14 @@ label scene_4:
     oph "Right behind you, Frey."
 
     "She definitely could have gotten my attention another way if she wanted."
-
+    stop env fadeout 3.0
     ####Fade out, in
     show black onlayer fade with dissolve
     hide station_empty onlayer foreground
     hide text onlayer foreground
     camera foreground:
         zoom 1.01 align (0.5, 0.5)
-
+    play env "sfx/Train.ogg" fadein 2.0
     "As we’re walking back to the room from dinner, a bend in the tracks throws me off balance."
 
     oph "I don’t remember you being such a lightweight. You sure that second vodka pineapple was a good idea?"
@@ -261,4 +261,5 @@ label scene_4:
     show fre e_happy_b onlayer background
     fre "Not for a single second."
     stop music fadeout 4.0
+    stop env fadeout 4.0
     jump scene_5

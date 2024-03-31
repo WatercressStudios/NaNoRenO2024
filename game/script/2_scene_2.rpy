@@ -26,7 +26,7 @@ label scene_2:
         linear 1 xpos -1.0
     pause 1
     hide black
-
+    play env "sfx/Train.ogg" fadein 1.0
     $ test_movingpolesrandom.set_show(True)
 
     "So far, my plan hasn't been as successful as I hoped it'd be."
@@ -246,6 +246,7 @@ label scene_2:
 
     "I pull her along with me to enjoy our first meal of the trip."
     stop music fadeout 5.0
+    stop env fadeout 3.0
     window hide
     show black onlayer fade:
         xpos 1.0
@@ -265,7 +266,7 @@ label scene_2:
     ####If we ever want to expand the story, here's an opportunity to do so.
 
     ####Transition to windows closed.
-
+    play env "sfx/Train.ogg" fadein 2.0
     "Arriving back to our room, I enjoy one last stretch before sitting back down."
 
     show oph_shadow onlayer foreground:
@@ -445,5 +446,5 @@ label scene_2:
     "More than anything else, I need to bring her home."
 
     #Scene 2 End
-
+    stop env fadeout 4.0
     jump scene_3

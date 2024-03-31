@@ -24,7 +24,7 @@ label scene_3:
         linear 1 xpos -1.0
     pause 1
     hide black
-
+    play env "sfx/Train.ogg" fadein 2.0
     ###Scene 3
 
     "As the morning light creeps through a small gap in curtains, the train gently trekking along, I open my eyes."
@@ -72,7 +72,7 @@ label scene_3:
     oph "Wanna get some breakfast?"
 
     fre "Sounds good, I’m starving."
-
+    stop env fadeout 4.0
     #NOTE: I'm leaving the previous text unscripted (for now) since they belong to the as-of-yet unfinished bed CG.
     #If I get everything else done, I'll wrap around and do some basic scripting.
     #~Wolf
@@ -96,8 +96,12 @@ label scene_3:
         xpos 0.0
         linear 1 xpos -1.0
     pause 1
+    hide black
+    
+    play env "sfx/Train.ogg" fadein 2.0
+    
     hide black onlayer fade
-
+    
     show fre normal onlayer foreground
     show oph normal onlayer foreground
     "Sitting down in the same dining car booth as yesterday, I look out the window, getting my bearings straight on just where we are."
@@ -197,7 +201,7 @@ label scene_3:
 
     show fre e_happy onlayer foreground
     fre "I’m down!"
-
+    stop env fadeout 4.0
     $ map_zoom = 3
     window hide
     show black onlayer fade:
@@ -217,7 +221,7 @@ label scene_3:
     ###Map Transition - San Antonio
     ###Jared’s San Antonio Exploration Scene
     ###Should have a title card as such: "Side Story: San Antonio"
-
+    play env "sfx/Quiet Platform.ogg" fadein 2.0
     show text "{color=#FFFFFF}{size=50}A Brief Aside: \nSan Antonio{/size}{/color}" onlayer foreground
     with dissolve
     pause
@@ -278,7 +282,7 @@ label scene_3:
     n "We take some cute pics under the rusty slide, doing our best to look like cowboys who are about to drop the best indie rock album you've ever heard."
     
     n "It isn't long until we're laughing uncontrollably, and for a tiny moment, our memories from years ago don't seem quite so far away."   
-    
+        
     n "The train blows its whistle and we're startled into action."
     
     n "We make off for the train like Bonnie and Clyde, hopping the tracks while still giggling amongst ourselves until we're back in our cabin, huffing to catch our breath."
@@ -288,7 +292,7 @@ label scene_3:
     hide screen map with dissolve
 
     ###End Jared's San Antonio Scene
-
+    
     $ train_speed = 1.0
     scene skybox_white
     camera foreground at camera_transform_init
@@ -304,7 +308,8 @@ label scene_3:
         linear 1 xpos -1.0
     pause 1
     hide black onlayer fade
-
+    play sound "sfx/Train Leave.ogg"
+    play env "sfx/Train.ogg" fadein 2.0
     "A final all aboard call is made for our ride to LA as we hurriedly shuffle up the steps and into the sleeper car."
 
     "We find our room, and I drop off my bags and circle back to the hallway, in desperate need of the bathroom."
@@ -357,6 +362,7 @@ label scene_3:
 
     fre "I could stay like this forever."
     stop music fadeout 4.0
+    stop env fadeout 4.0
     ###End Scene 3
     jump scene_4
 
