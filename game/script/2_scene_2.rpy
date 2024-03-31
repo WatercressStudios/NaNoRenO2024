@@ -9,6 +9,7 @@ label scene_2:
         xpos 1.0
         linear 1 xpos 0
     pause 1
+    play sound "sfx/Train Map.ogg"
     show screen map(2, True) with dissolve
     pause
     show screen map(3, True) with dissolve
@@ -19,7 +20,7 @@ label scene_2:
     show oph nervous onlayer foreground
     show fre j_sad_ec onlayer foreground
     camera foreground at camera_transform(shake=0.5, pos=(0.0, 0.66), zoom=2.01, duration=0.0)
-
+    play music "music/Track 5.ogg" fadein 2.0
     show black onlayer fade:
         xpos 0.0
         linear 1 xpos -1.0
@@ -244,13 +245,13 @@ label scene_2:
     "Even though we've had a few hang ups here and there, I'm willing to accept this truce of ours. We've lost too much time to waste it now."
 
     "I pull her along with me to enjoy our first meal of the trip."
-
+    stop music fadeout 5.0
     window hide
     show black onlayer fade:
         xpos 1.0
         linear 1 xpos 0
     pause 1
-
+    play sound "sfx/Train Map.ogg"
     show screen map(4, True) with dissolve
     pause
     hide screen map with dissolve

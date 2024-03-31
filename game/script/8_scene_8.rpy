@@ -7,6 +7,7 @@ label scene_8:
         xpos 1.0
         linear 1 xpos 0
     pause 1
+    play sound "sfx/Train Map.ogg"
     show screen map(21, True) with dissolve
     pause
     show screen map(22, True) with dissolve
@@ -24,7 +25,7 @@ label scene_8:
 
     # show oph_shadow onlayer foreground
     # show oph normal onlayer foreground at oph_transform
-
+    play music "music/Track 6.ogg" fadein 2.0
     show black onlayer fade:
         xpos 0.0
         linear 1 xpos -1.0
@@ -206,4 +207,5 @@ label scene_8:
     $ quick_menu = False
     window hide
     call screen credits
+    stop music fadeout 5.0
     return
