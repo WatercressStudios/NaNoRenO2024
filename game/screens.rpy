@@ -243,8 +243,8 @@ screen quick_menu():
 
         hbox:
             style_prefix "quick"
-            xalign 0.222
-            yalign 0.999
+            xoffset 580
+            yalign 0.997
             spacing 24
             imagebutton auto "gui/train/qbuttons/qbutton_rollback_%s.png":
                 action Rollback()
@@ -264,7 +264,7 @@ screen quick_menu():
                 tooltip "Pause Menu"
 
         frame:
-            background Image("gui/train/ticket_barcode.png", xalign=0.76, yalign=0.9995)
+            background Image("gui/train/ticket_barcode.png", xalign=1.0, xoffset=-544, yalign=0.9979)
 
     $ tooltip = GetTooltip()
 
@@ -515,7 +515,7 @@ screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
     use navigation
 
     imagebutton auto "gui/train/mbuttons/mbutton_return_%s.png":
-        xoffset 52
+        xoffset 56
         yalign 1.0
         yoffset -97
         action Return()
@@ -541,22 +541,22 @@ style game_menu_outer_frame:
     background "gui/train/confirm.png"
 
 style game_menu_navigation_frame:
-    xsize 420
+    xsize 578
     xoffset 40
     yfill True
 
     background "gui/train/navigation_container.png"
 
 style game_menu_content_frame:
-    top_padding 170
-    left_padding 50
+    top_padding 250
+    left_padding 56
     right_padding 50
     bottom_padding 170
     left_margin 80
-    top_margin 60
+    top_margin 80
 
 style game_menu_viewport:
-    xsize 1380
+    xsize 1700
 
 style game_menu_vscrollbar:
     xoffset -18
@@ -652,6 +652,7 @@ screen file_slots(title):
 
             xalign 0.5
             yalign 0.5
+            xoffset -44
 
             spacing gui.slot_spacing
 
@@ -678,16 +679,15 @@ screen file_slots(title):
         vbox:
             style_prefix "page"
 
-            xalign 0.5
+            xalign 1.0
             yalign 1.0
 
             hbox:
-                xalign 1.0
-
+                xoffset -244
                 spacing gui.page_spacing
 
                 textbutton _("<"):
-                    left_padding 210
+                    xsize None
                     action FilePagePrevious()
 
                 if config.has_autosave:
@@ -703,7 +703,7 @@ screen file_slots(title):
                         action FilePage(page)
 
                 textbutton _(">"):
-                    right_padding 210
+                    xsize None
                     action FilePageNext()
 
             if config.has_sync:
@@ -763,6 +763,7 @@ screen preferences():
     use game_menu(_("Preferences"), scroll="viewport"):
 
         hbox:
+            xoffset 140
 
             hbox:
                 box_wrap True
@@ -770,7 +771,7 @@ screen preferences():
                 if renpy.variant("pc") or renpy.variant("web"):
 
                     vbox:
-                        xsize 240
+                        xsize 400
                         style_prefix "radio"
                         label _("Display")
                         textbutton _("Window"):
@@ -877,12 +878,13 @@ style pref_label_text:
     yalign 1.0
 
 style pref_vbox:
-    xsize 338
+    xsize 500
 
 style radio_vbox:
     spacing gui.pref_button_spacing
 
 style radio_button:
+    xsize 300
     properties gui.button_properties("radio_button")
     foreground "gui/button/radio_[prefix_]foreground.png"
 
@@ -896,6 +898,7 @@ style check_vbox:
     spacing gui.pref_button_spacing
 
 style check_button:
+    xsize 300
     properties gui.button_properties("check_button")
     foreground "gui/button/check_[prefix_]foreground.png"
 
