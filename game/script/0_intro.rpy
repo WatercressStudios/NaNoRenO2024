@@ -2,9 +2,9 @@
 define oph = Character("Ophelia", callback=speaker("oph"))
 define gra = Character("Grandma")
 define n = Character(None, kind=nvl, what_color="#ffffff")
-define f = Character("Freya", kind=nvl)
-define o = Character("Ophelia", kind=nvl)
-define g = Character("Grandma", kind=nvl)
+define f = Character("Freya", kind=nvl, what_color="#ffffff")
+define o = Character("Ophelia", kind=nvl, what_color="#ffffff")
+define g = Character("Grandma", kind=nvl, what_color="#ffffff")
 
 label start:
     $ GameLoop.start()
