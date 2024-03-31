@@ -197,6 +197,8 @@ init python:
 
 
 define config.has_sync = False
+define config.has_autosave = False
+define config.has_quicksave = False
 
 ## A Google Play license key is required to perform in-app purchases. It can be
 ## found in the Google Play developer console, under "Monetize" > "Monetization

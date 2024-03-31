@@ -57,28 +57,28 @@ define gui.interface_text_color = '#4a5153'
 ## Fonts and Font Sizes ########################################################
 
 ## The font used for in-game text.
-define gui.text_font = "DejaVuSans.ttf"
+define gui.text_font = "gui/train/Mukta-Regular.ttf"
 
 ## The font used for character names.
-define gui.name_text_font = "DejaVuSans.ttf"
+define gui.name_text_font = "gui/train/Mukta-Regular.ttf"
 
 ## The font used for out-of-game text.
-define gui.interface_text_font = "DejaVuSans.ttf"
+define gui.interface_text_font = "gui/train/Mukta-Regular.ttf"
 
 ## The size of normal dialogue text.
-define gui.text_size = 32
+define gui.text_size = 42
 
 ## The size of character names.
-define gui.name_text_size = 40
+define gui.name_text_size = 56
 
 ## The size of text in the game's user interface.
-define gui.interface_text_size = 32
+define gui.interface_text_size = 40
 
 ## The size of labels in the game's user interface.
-define gui.label_text_size = 36
+define gui.label_text_size = 48
 
 ## The size of text on the notify screen.
-define gui.notify_text_size = 24
+define gui.notify_text_size = 32
 
 ## The size of the game's title.
 define gui.title_text_size = 72
@@ -87,7 +87,7 @@ define gui.title_text_size = 72
 ## Main and Game Menus #########################################################
 
 ## The images used for the main and game menus.
-define gui.main_menu_background = "gui/train/main_menu_bg.png" #"cgs/station_empty.jpg"
+define gui.main_menu_background = "cgs/station_empty.jpg" #"gui/train/main_menu_bg.png"
 define gui.game_menu_background = "gui/train/confirm.png"
 
 
@@ -106,8 +106,8 @@ define gui.textbox_yalign = 1.0
 
 ## The placement of the speaking character's name, relative to the textbox.
 ## These can be a whole number of pixels from the left or top, or 0.5 to center.
-define gui.name_xpos = 420
-define gui.name_ypos = 4
+define gui.name_xpos = 650
+define gui.name_ypos = -62
 
 ## The horizontal alignment of the character's name. This can be 0.0 for left-
 ## aligned, 0.5 for centered, and 1.0 for right-aligned.
@@ -130,11 +130,11 @@ define gui.namebox_tile = False
 ## The placement of dialogue relative to the textbox. These can be a whole
 ## number of pixels relative to the left or top side of the textbox, or 0.5 to
 ## center.
-define gui.dialogue_xpos = 380
-define gui.dialogue_ypos = 76
+define gui.dialogue_xpos = 580
+define gui.dialogue_ypos = 28
 
 ## The maximum width of dialogue text, in pixels.
-define gui.dialogue_width = 1200
+define gui.dialogue_width = 1362
 
 ## The horizontal alignment of the dialogue text. This can be 0.0 for left-
 ## aligned, 0.5 for centered, and 1.0 for right-aligned.
@@ -224,18 +224,18 @@ define gui.choice_button_text_insensitive_color = '#8888887f'
 ## image files in gui/button, like the other kinds of buttons.
 
 ## The save slot button.
-define gui.slot_button_width = 344
-define gui.slot_button_height = 279
+define gui.slot_button_width = 460
+define gui.slot_button_height = 372
 define gui.slot_button_borders = Borders(15, 15, 15, 15)
-define gui.slot_button_text_size = 21
+define gui.slot_button_text_size = 28
 define gui.slot_button_text_xalign = 0.5
 define gui.slot_button_text_idle_color = gui.idle_small_color
 define gui.slot_button_text_selected_idle_color = gui.selected_color
 define gui.slot_button_text_selected_hover_color = gui.hover_color
 
 ## The width and height of thumbnails used by the save slots.
-define config.thumbnail_width = 314
-define config.thumbnail_height = 194
+define config.thumbnail_width = 430
+define config.thumbnail_height = 264
 
 ## The number of columns and rows in the grid of save slots.
 define gui.file_slot_cols = 3
@@ -249,7 +249,7 @@ define gui.file_slot_rows = 2
 
 ## The position of the left side of the navigation buttons, relative to the left
 ## side of the screen.
-define gui.navigation_xpos = 60
+define gui.navigation_xpos = 64
 
 ## The vertical position of the skip indicator.
 define gui.skip_ypos = 15
@@ -261,7 +261,7 @@ define gui.notify_ypos = 68
 define gui.choice_spacing = 33
 
 ## Buttons in the navigation section of the main and game menus.
-define gui.navigation_spacing = 6
+define gui.navigation_spacing = 12
 
 ## Controls the amount of spacing between preferences.
 define gui.pref_spacing = 15
