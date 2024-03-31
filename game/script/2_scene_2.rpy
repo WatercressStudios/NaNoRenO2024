@@ -13,8 +13,6 @@ label scene_2:
     pause
     show screen map(3, True) with dissolve
     pause
-    show screen map(4, True) with dissolve
-    pause
     hide screen map with dissolve
     pause 0.5
 
@@ -238,11 +236,30 @@ label scene_2:
 
     "Getting up, I reach my hand out and pull her up beside me."
 
-    
+    hide oph_shadow onlayer foreground
+    hide oph onlayer foreground with dissolve
+    hide fre_shadow onlayer foreground
+    hide fre onlayer foreground with dissolve
 
     "Even though we've had a few hang ups here and there, I'm willing to accept this truce of ours. We've lost too much time to waste it now."
 
     "I pull her along with me to enjoy our first meal of the trip."
+
+    window hide
+    show black onlayer fade:
+        xpos 1.0
+        linear 1 xpos 0
+    pause 1
+
+    show screen map(4, True) with dissolve
+    pause
+    hide screen map with dissolve
+
+    show black onlayer fade:
+        xpos 0.0
+        linear 1 xpos -1.0
+    pause 1
+    hide black
 
     ####If we ever want to expand the story, here's an opportunity to do so.
 
@@ -250,26 +267,51 @@ label scene_2:
 
     "Arriving back to our room, I enjoy one last stretch before sitting back down."
 
+    show oph_shadow onlayer foreground:
+        alpha 0.0
+        linear 0.5 alpha 1
+    show oph cheeky onlayer foreground at oph_transform:
+        alpha 0.0
+        linear 0.5 alpha 1
+    pause 0.5
+
+    show fre_shadow onlayer foreground:
+        alpha 0.0
+        linear 0.5 alpha 1
+    show fre j_smile onlayer foreground at fre_transform:
+        alpha 0.0
+        linear 0.5 alpha 1
+    pause 0.5
+
     oph "You know, I didn't expect train food to be that good. I mean, my only point of reference was plane food, which is pretty fuckin' garbage."
 
     oph "Even when you're in first class, it just doesn't compare. Here? Really filling."
 
+    show fre j_shocked onlayer foreground
     fre "You've flown first class?"
 
+    show oph normal onlayer foreground
     oph "A bit, yeah. I never really liked it though, even if it's more comfy. Just feels wrong, ya know? I never felt like I belonged up there."
 
+    show oph surprised_ec onlayer foreground
     oph "Felt like I was betraying my roots."
 
+    show fre j_scoff onlayer foreground
     fre "We weren't exactly poor growing up, Ophi."
 
+    show oph disbelief_ec onlayer foreground
     oph "But we weren't rich, either. Just solidly in the middle. I dunno, separating things by how much money you make? Kinda shitty."
 
+    show fre j_yawn onlayer foreground
     "She yawns, nodding."
 
+    show fre j_smile onlayer foreground
     fre "True."
 
+    show oph smile onlayer foreground
     "Ah, yeah. We should get the beds ready, huh? I was having too much fun, I forgot we still have to sleep."
 
+    show oph sad onlayer foreground
     "Shame we can't sleep together."
 
     fre "What's wrong?"
@@ -278,13 +320,20 @@ label scene_2:
 
     fre "You're frowning."
 
+    show oph surprised_ec onlayer foreground
     oph "Oh! Nothing, nothing. Let's get the beds sorted. Top, or bottom?"
 
+    show fre j_embarrassed_smile onlayer foreground
     fre "Umm..."
 
     oph "Of course you're bottom. I'll take the top."
 
     fre "Y-Yeah."
+
+    hide oph_shadow onlayer foreground
+    hide oph onlayer foreground with dissolve
+    hide fre_shadow onlayer foreground
+    hide fre onlayer foreground with dissolve
 
     "I look around the top bunk, trying to find a way to fold it down. It should be pretty simple..."
 
@@ -296,7 +345,9 @@ label scene_2:
 
     "Ahh, fuck."
 
-    oph "I think it's broken."
+    $ hide_sides = []
+
+    oph sad "I think it's broken."
 
     fre "Should we get someone?"
 
