@@ -113,47 +113,83 @@ label scene_3:
 
     scene black onlayer foreground with dissolve
 
-    nvl show
-
     n "The station itself is strikingly Tex-Mex in design. I guess it's a fitting omen to say we still have half the state left to get through. We're pretty deep in it at this point."
+    
     n "\"Oh hey, the Alamo. I remember that place!\" I proclaim sarcastically."
+    
     n "Ophelia cocks an eyebrow in my direction, smiling and shaking her head as she walks away and stretches on the platform. I blush as I try not to stare."
+    
     n "I think I'm pretty clever for only a moment. As we walk into the bright open streets, we can't help but notice the stadium down the road."
-    nvl clear
+    
     n "\"What do you think that place is?\" I ask."
+    
     n "Ophelia whips out her phone, pulling up a map faster than I can blink. \"It's the Alamodome.\""
+    
     n "My expression drops, my ego shattered. The Alamo.. Dome? There's an Alamo DOME?" 
+    
     n "I curl up into a ball on the sidewalk as I realize that I am no better than any of the thousands of tourists who enter this place and make that exact same joke, blissfully unaware of their unoriginality."
-    nvl clear
+    
     n "It's baked into the very sand, and I am nothing but a single grain."
+    
     n "\"Come on,\" Ophi bumps against me, shaking me from my drama. \"Are we gonna check out the city or not?\""
+    
     n "I leap to my feet, dusting myself off. \"Alright, alright. What do they even have here?\""
+    
     n "Ophi gets in close, smiling. \"That's the thing, Freya. We gotta go find it.\""
-    nvl clear
+    
     n "She leads the way, with me just a couple steps behind her. And like some kind of spell, we don't even notice we've found our way to the path that follows the river through the downtown area."
+    
     n "It's a lively walkway, with restaurants and bridges and gardens decorating the way. Everything centered on the river."
+    
     n "I guess people don't really change that much, even over the course of hundreds of years. We're always drawn back to water."
+    
     n "We don't really have a plan. Well, I sure don't, and Ophi doesn't seem to have much of one either."
-    nvl clear
+    
     n "We stick close to the water, seeing where it leads us."
+    
     n "Occasionally, we stray to investigate whatever catches our eye as the river leads us from one side of the city to another, over and under bridges as they come and go."
+    
     n "I remind us that we need to circle back around soon so we don't miss the train. Ophi shrugs, saying she's keeping track of the time."
-    n "We pick a spot to eat, a largely authentic-looking Mexican restaurant to really run home the Texas experience."
-    nvl clear    
+    
+    n "We pick a spot to eat, a largely authentic-looking Mexican restaurant to really run home the Texas experience."  
+    
     n "And with perfect timing, we make it back to the station with just a few minutes to spare. I'm satisfied with the tour, ready to get back on the train."
+    
     n "\"What the fuck is that?\" Ophelia asks, looking just down the road. Across the tracks, there's a run-down building with a winding slide coming out of it."
+    
     n "I guarantee sliding down it would give you tetanus and four other diseases with cryptic names. Just being near it would be a health hazard. It's perfect. The most punk thing we've seen for miles."
+    
     n "\"I want to go take pictures under that.\""
-    nvl clear    
+    
     n "\"Oh my god, yes!\""
+    
     n "Ophelia jumps expertly from one rail to the next as she crosses the tracks, leaving me a couple steps behind as I make sure I don't trip over anything."
+    
     n "We take some cute pics under the rusty slide, doing our best to look like cowboys who are about to drop the best indie rock album you've ever heard."
-    n "It isn't long until we're laughing uncontrollably, and for a tiny moment, our memories from years ago don't seem quite so far away."
-    nvl clear    
+    
+    n "It isn't long until we're laughing uncontrollably, and for a tiny moment, our memories from years ago don't seem quite so far away."   
+    
     n "The train blows its whistle and we're startled into action."
+    
     n "We make off for the train like Bonnie and Clyde, hopping the tracks while still giggling amongst ourselves until we're back in our cabin, huffing to catch our breath."
 
-    nvl hide
+    nvl clear
+
+    $ train_speed = 1.0
+    scene skybox_white
+    camera foreground at camera_transform_init
+
+    $ test_movingpoles = MovingImage("test_movingobject1", ypos=0, min_interval=10000, max_interval=10000, init_xoffset=0, out_xoffset=None)
+    $ test_movingpolesrandom = MovingImage("test_movingobject2", ypos=0, min_interval=0, max_interval=10000, init_xoffset=0, out_xoffset=None)
+    $ test_movingtrain = MovingImage("test_movingtrain", ypos=0, min_interval=0, max_interval=0, init_xoffset=-500, out_xoffset=500)
+
+    show bg2_closed onlayer foreground
+    
+    show black onlayer foreground:
+        alpha 1.0
+        linear 1 alpha 0.0
+    pause 1
+    hide black
 
     ###End Jared's San Antonio Scene
 
