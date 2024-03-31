@@ -46,6 +46,8 @@ label scene_5:
 
     "And here we are now."
 
+    #Some side sprite scripting can probably go below if we have the time.
+
     "She stirs, slowly blinking at me with a simple smile."
 
     fre "Heyy Ophi."
@@ -88,14 +90,21 @@ label scene_5:
 
     "Arriving back to our roomette, I help Freya up to her feet, and she takes her turn."
 
+    show fre normal onlayer foreground
+    show oph normal onlayer foreground
     "She comes back a short time later, drinks in hand, sitting down across from me. I gratefully accept the gift."
 
+    show fre pout onlayer foreground
     fre "Aww, you put the bed away. It was nice~"
 
+    show oph laugh onlayer foreground
     oph "Yeah, it was... but we'd just fall right back asleep. Don't wanna waste our day away!"
 
+    show oph smile onlayer foreground
+    show fre smile onlayer foreground
     fre "True."
 
+    show oph e_sigh onlayer foreground
     "I look furtively out of the window, trying to think of how I want to broach this topic."
 
     ####Zodai's Grandma Scene
@@ -104,6 +113,7 @@ label scene_5:
 
     ##Maybe zoom in and blur the bg, nvl
 
+    show fre normal onlayer foreground
     "The scenery passes by at an impressive speed."
 
     "Out the window is a vast, barren desert."
@@ -112,22 +122,32 @@ label scene_5:
 
     ##focus back to inside cabin
 
+    show fre e_normal onlayer foreground
     "Freya sits across from me, sipping her juice from a straw and shifting around in her seat." 
 
     "She looks antsy, maybe a little restless. Not having her phone seems harder on her than it is on me."
 
+    show oph sad onlayer foreground
     oph "Freya, you and Grandma were pretty close when I left, yeah?"
 
+    show fre e_sad onlayer foreground
     "She gulps down the rest of her drink, letting out a breath before responding."
 
+    show fre e_sad_smile onlayer foreground
+    show oph e_sad onlayer foreground
     fre "You know the kind of woman she was. She felt safe to talk to, even when we were kids."
 
+    show fre e_sad_mo onlayer foreground
     fre "It's hard to let go of that, especially when times are tough."
 
+    show oph e_sad_mo onlayer foreground
+    show fre e_sad onlayer foreground
     oph "I get it."
 
+    show oph e_sad onlayer foreground
     oph "When I'd heard she passed, it made me wish I'd come over to visit."
 
+    show oph e_sad_smile onlayer foreground
     oph "We called and texted every now and then, but it isn't the same as seeing her in person."
 
     oph "Even with her dementia, it'd be better than nothing, right?"
