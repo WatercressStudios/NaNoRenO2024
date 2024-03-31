@@ -49,69 +49,120 @@ label scene_3:
 
     fre "Sounds good, I’m starving."
 
+    #NOTE: I'm leaving the previous text unscripted (for now) since they belong to the as-of-yet unfinished bed CG.
+    #If I get everything else done, I'll wrap around and do some basic scripting.
+    #~Wolf
+
+    show fre normal onlayer foreground
+    show oph normal onlayer foreground
     "Sitting down in the same dining car booth as yesterday, I look out the window, getting my bearings straight on just where we are."
 
+    show oph e_smile onlayer foreground
     "Vast pine woods flicker by, bringing a surge of memories from our early high school days."
-
+    
+    show fre e_smile onlayer foreground
     fre "Remember cutting through the woods to go to the cafe?"
 
+    show oph e_devious_smile onlayer foreground
     "Ophi snorts."
 
+    show oph e_devious onlayer foreground
+    show fre e_smile_ec onlayer foreground
     oph "To skip P.E.? Yeah. In hindsight, you hating P.E. makes too much sense."
 
+    show fre e_smile onlayer foreground
+    show oph e_smile onlayer foreground
     fre "Right? God, I was so dense."
-
+    
+    show oph e_devious_relaxed onlayer foreground
     oph "I also remember you running away from that gator you almost stepped on."
 
+    show oph laugh onlayer foreground
+    show fre normal onlayer foreground
     "Ophi giggles."
 
+    show fre pout onlayer foreground
+    show oph e_smile onlayer foreground
     fre "Yeah, yeah, very funny."
 
+    show fre e_devious onlayer foreground
+    show oph surprised onlayer foreground
     fre "But I distinctly remember another time you tripped over a root and ate shit."
 
+    show oph e_embarrassed_p onlayer foreground
     "Ophi covers her face in embarrassment."
 
+    show fre e_happy onlayer foreground
+    show oph e_sigh onlayer foreground
     oph "Ugh, don’t remind me. I was covered from head to toe in mud!"
 
+    show fre sad onlayer foreground
+    show oph sad onlayer foreground
     fre "You know, I tried going after you left. After a couple times going alone, it just started feeling…"
 
+    show fre sad_ec onlayer foreground
     fre "I don’t know, hollow."
 
+    show fre sad onlayer foreground
+    show oph e_sad onlayer foreground
     oph "You know I would have been there if I could."
 
+    show fre e_sad_mo onlayer foreground
+    show fre nervous_b onlayer foreground
     fre "Of course. Your Dad didn’t really give you a choice."
 
+    show fre e_sad onlayer foreground
+    show oph e_sad_mo onlayer foreground
     oph "It was hard. The worst days of my life. I lost my Mom, and then I lost my best friend."
 
+    show oph e_sad
     "I want to tell her I didn’t die, that she could have kept in touch, but I think better of it."
 
     "I don’t want to sour the mood. It’s been a great day so far, and I want to make the most of the time I have with Ophi."
 
     "Instead, I steer the conversation back to our good memories."
 
+    show fre e_sad_smile onlayer foreground
     fre "Remember when Grandma accidentally gave us your Mom’s edibles?"
 
+    show oph e_surprised onlayer foreground
+    show fre e_normal onlayer foreground
     oph "Oh my god, I forgot about that! What were we, twelve?"
 
+    show fre e_smile onlayer foreground
+    show oph e_normal onlayer foreground
     fre "She was freaking the fuck out when she realized what happened."
 
+    show oph e_laugh onlayer foreground
+    show fre e_happy onlayer foreground
     oph "She made us promise not to tell Mom! Oh, she would have been livid if she had ever found out."
 
     "As we laugh and reminisce, the conductor announces our arrival into San Antonio."
 
+    show fre normal onlayer foreground
+    show oph e_normal onlayer foreground
     "We gather our things and get off the train. I check the notice boards and find our connecting train."
 
+    show oph normal onlayer foreground
+    show fre e_normal onlayer foreground
     fre "I think we have a few hours before the next train."
 
+    show oph e_normal onlayer foreground
     oph "If you want, we could drop our bags in the sleeper passenger lounge and explore the city a bit."
 
+    show fre e_happy onlayer foreground
     fre "I’m down!"
 
     ###Map Transition - San Antonio
     ###Jared’s San Antonio Exploration Scene
     ###Should have a title card as such: "Side Story: San Antonio"
 
-    scene black onlayer foreground with dissolve
+    scene black onlayer foreground with Dissolve (2)
+
+    show text "{color=#FFFFFF}{size=50}A Brief Aside: \nSan Antonio{/size}{/color}" onlayer foreground
+    with dissolve
+    pause
+    hide text onlayer foreground with dissolve
 
     n "The station itself is strikingly Tex-Mex in design. I guess it's a fitting omen to say we still have half the state left to get through. We're pretty deep in it at this point."
     
@@ -175,6 +226,8 @@ label scene_3:
 
     nvl clear
 
+    ###End Jared's San Antonio Scene
+
     $ train_speed = 1.0
     scene skybox_white
     camera foreground at camera_transform_init
@@ -191,13 +244,14 @@ label scene_3:
     pause 1
     hide black
 
-    ###End Jared's San Antonio Scene
-
     "A final all aboard call is made for our ride to LA as we hurriedly shuffle up the steps and into the sleeper car."
 
     "We find our room, and I drop off my bags and circle back to the hallway, in desperate need of the bathroom."
 
     "When I make it back to the room, I find Ophi working on folding our bed down. She points up to the other bed."
+
+    ####All of the below is side sprites, and a missing CG. TBD
+    ####~Wolf
 
     oph "Looks like the top bunk isn’t stuck this time!"
 
