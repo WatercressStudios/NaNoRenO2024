@@ -1,6 +1,27 @@
 label scene_4:
     ###Scene 4
 
+    $ map_zoom = 3
+    window hide
+    show black onlayer fade:
+        xpos 1.0
+        linear 1 xpos 0
+    pause 1
+    show screen map(12, True) with dissolve
+    pause
+    show screen map(13, True) with dissolve
+    pause
+    show screen map(14, True) with dissolve
+    pause
+    hide screen map with dissolve
+    pause 0.5
+
+    show black onlayer fade:
+        xpos 0.0
+        linear 1 xpos -1.0
+    pause 1
+    hide black
+
     "The squealing brakes of the train wake me from my impromptu nap as the conductor announces a fresh air break."
 
     "I nudge Ophi, rousing her."
