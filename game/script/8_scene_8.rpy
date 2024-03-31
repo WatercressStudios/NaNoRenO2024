@@ -1,6 +1,36 @@
 label scene_8:
     ##Scene 8
 
+    $ map_zoom = 3
+    window hide
+    show black onlayer fade:
+        xpos 1.0
+        linear 1 xpos 0
+    pause 1
+    show screen map(21, True) with dissolve
+    pause
+    show screen map(22, True) with dissolve
+    pause
+    show screen map(23, True) with dissolve
+    pause
+    hide screen map with dissolve
+    pause 0.5
+
+    hide black
+    hide black onlayer foreground
+
+    # show fre_shadow onlayer foreground
+    # show fre normal onlayer foreground at fre_transform
+
+    # show oph_shadow onlayer foreground
+    # show oph normal onlayer foreground at oph_transform
+
+    show black onlayer fade:
+        xpos 0.0
+        linear 1 xpos -1.0
+    pause 1
+    hide black onlayer fade
+
     "About an hour after we finish dinner, our last meal on the train before reaching Portland, the train pulls into Eugene for the final fresh air break of the journey."
 
     "Before the train has a chance to come to a complete stop, Ophi grabs me by the hand, pulling me toward the exit."
@@ -68,6 +98,32 @@ label scene_8:
     "In the beautiful twilight, Ophi gives me my second kiss in my new home state."
 
     ###Map transition - Portland
+
+    $ map_zoom = 3
+    window hide
+    show black onlayer fade:
+        xpos 1.0
+        linear 1 xpos 0
+    pause 1
+    show screen map(24, True) with dissolve
+    pause
+    hide screen map with dissolve
+    pause 0.5
+
+    hide black
+    hide black onlayer foreground
+
+    # show fre_shadow onlayer foreground
+    # show fre normal onlayer foreground at fre_transform
+
+    # show oph_shadow onlayer foreground
+    # show oph normal onlayer foreground at oph_transform
+
+    show black onlayer fade:
+        xpos 0.0
+        linear 1 xpos -1.0
+    pause 1
+    hide black onlayer fade
 
     "As the train slowly rolls into the station in Portland, Ophi and I gather up our belongings checking every corner of the tiny room to make sure we don't leave anything behind."
 
