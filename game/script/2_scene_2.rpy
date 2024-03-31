@@ -18,7 +18,8 @@ label scene_2:
     hide screen map with dissolve
     pause 0.5
 
-    # NOTE to Wolf: set up the cabin and sprites in here
+    show oph nervous onlayer foreground
+    show fre j_embarrassed onlayer foreground
 
     show black onlayer fade:
         xpos 0.0

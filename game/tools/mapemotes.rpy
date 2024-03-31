@@ -33,6 +33,17 @@ init python:
     ##### FREYA #####
     # j_ = with jacket
     MapEmote('fre normal', 'fre default base md_default ed_default brow_default')
+    MapEmote('fre normal_ec', 'fre default base md_default ec_default brow_default')
+    MapEmote('fre sad', 'fre default guarded md_sad ed_sad brow_sad sweat')
+    MapEmote('fre sad_ec', 'fre default guarded md_sad ec_default brow_sad sweat')
+    MapEmote('fre embarrassed', 'fre default guarded md_smile ed_sad brow_sad sweat')
+    MapEmote('fre embarrassed_ec', 'fre default guarded md_smile ec_default brow_sad sweat')
+    MapEmote('fre embarrassed_smile', 'fre default guarded md_smile ec_smile brow_sad blush sweat')
+    MapEmote('fre scoff', 'fre default guarde mdo_surprised ec_default brow_relaxed')
+    MapEmote('fre nervous', 'fre default guarded md_smile ed_default brow_sad')
+    MapEmote('fre nervous_b', 'fre default base md_sad ed_sad brow_sad sweat')
+    MapEmote('fre smile', 'fre default base md_smile ec_smile brow_relaxed')
+
     MapEmote('fre j_normal', 'fre default basejacket md_default ed_default brow_default')
     MapEmote('fre j_normal_ec', 'fre default basejacket md_default ec_default brow_default')
     MapEmote('fre j_sad', 'fre default guardedjacket md_sad ed_sad brow_sad sweat')
