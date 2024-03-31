@@ -1,6 +1,29 @@
 label scene_3:
     ###Map Transition - Houston
 
+    $ map_zoom = 3
+    window hide
+    show black onlayer fade:
+        xpos 1.0
+        linear 1 xpos 0
+    pause 1
+    show screen map(5, True) with dissolve
+    pause
+    show screen map(6, True) with dissolve
+    pause
+    show screen map(7, True) with dissolve
+    pause
+    show screen map(8, True) with dissolve
+    pause
+    hide screen map with dissolve
+    pause 0.5
+
+    show black onlayer fade:
+        xpos 0.0
+        linear 1 xpos -1.0
+    pause 1
+    hide black
+
     ###Scene 3
 
     "As the morning light creeps through a small gap in curtains, the train gently trekking along, I open my eyes."
@@ -17,7 +40,7 @@ label scene_3:
 
     "By the time I make it back to our room, Ophi has woken up. Sitting up, still wrapped in a blanket, she sleepily rubs her eyes."
 
-    oph "Mornin'."
+    oph cheeky "Mornin'."
 
     "She reaches up to her messy hair, pulling it away from her face and back off her shoulders."
 
@@ -25,7 +48,7 @@ label scene_3:
 
     oph "Hello in there? Earth to Freya!"
 
-    fre "Oh, good morning! Sorry for spacing, I must still be half asleep."
+    fre smile "Oh, good morning! Sorry for spacing, I must still be half asleep."
 
     oph "You sure about that? You were sleeping like a baby."
 
@@ -52,6 +75,27 @@ label scene_3:
     #NOTE: I'm leaving the previous text unscripted (for now) since they belong to the as-of-yet unfinished bed CG.
     #If I get everything else done, I'll wrap around and do some basic scripting.
     #~Wolf
+
+    window hide
+    show black onlayer fade:
+        xpos 1.0
+        linear 1 xpos 0
+    pause 1
+
+    hide bg2_closed onlayer foreground
+    show bg1_open onlayer foreground
+
+    show fre_shadow onlayer foreground
+    show fre normal onlayer foreground at fre_transform
+    show oph_shadow onlayer foreground
+    show oph normal onlayer foreground at oph_transform
+
+
+    show black onlayer fade:
+        xpos 0.0
+        linear 1 xpos -1.0
+    pause 1
+    hide black
 
     show fre normal onlayer foreground
     show oph normal onlayer foreground
@@ -153,11 +197,24 @@ label scene_3:
     show fre e_happy onlayer foreground
     fre "I’m down!"
 
+    $ map_zoom = 3
+    window hide
+    show black onlayer fade:
+        xpos 1.0
+        linear 1 xpos 0
+    pause 1
+    show screen map(9, True) with dissolve
+    pause
+    hide screen map with dissolve
+    pause 0.5
+
+    hide black onlayer fade
+    hide black onlayer foreground
+    show black onlayer foreground
+
     ###Map Transition - San Antonio
     ###Jared’s San Antonio Exploration Scene
     ###Should have a title card as such: "Side Story: San Antonio"
-
-    scene black onlayer foreground with Dissolve (2)
 
     show text "{color=#FFFFFF}{size=50}A Brief Aside: \nSan Antonio{/size}{/color}" onlayer foreground
     with dissolve
@@ -225,6 +282,7 @@ label scene_3:
     n "We make off for the train like Bonnie and Clyde, hopping the tracks while still giggling amongst ourselves until we're back in our cabin, huffing to catch our breath."
 
     nvl clear
+    pause 0.5
 
     ###End Jared's San Antonio Scene
 
@@ -237,12 +295,12 @@ label scene_3:
     $ test_movingtrain = MovingImage("test_movingtrain", ypos=0, min_interval=0, max_interval=0, init_xoffset=-500, out_xoffset=500)
 
     show bg2_closed onlayer foreground
-    
-    show black onlayer foreground:
-        alpha 1.0
-        linear 1 alpha 0.0
+    hide black onlayer foreground
+    show black onlayer fade:
+        xpos 0.0
+        linear 1 xpos -1.0
     pause 1
-    hide black
+    hide black onlayer fade
 
     "A final all aboard call is made for our ride to LA as we hurriedly shuffle up the steps and into the sleeper car."
 
@@ -252,12 +310,13 @@ label scene_3:
 
     ####All of the below is side sprites, and a missing CG. TBD
     ####~Wolf
+    $ hide_sides = []
 
-    oph "Looks like the top bunk isn’t stuck this time!"
+    oph sad "Looks like the top bunk isn’t stuck this time!"
 
     "I can’t help being disappointed by the apparent news that Ophi and I will be sleeping in separate beds tonight. I can’t let her see it though."
 
-    fre "Maybe you’ll sleep better tonight."
+    fre nervous "Maybe you’ll sleep better tonight."
 
     oph "One could hope. And speaking of which, I was thinking of taking a nap down here for now. That cool with you?"
 
@@ -294,6 +353,8 @@ label scene_3:
     "I run my fingers through her gorgeous, flowing hair, pushing it behind her ear."
 
     fre "I could stay like this forever."
+
+    $ hide_sides = ['Freya, Ophelia']
 
     ###End Scene 3
     jump scene_4

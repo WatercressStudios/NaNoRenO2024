@@ -351,15 +351,15 @@ label scene_2:
 
     fre "Should we get someone?"
 
-    oph "Nah, it's late. I don't want to bother 'em with this. Let's just share!"
+    oph cheeky "Nah, it's late. I don't want to bother 'em with this. Let's just share!"
 
     "I promise, I pulled as hard as I could! I'm just lucky, I guess."
 
-    fre "Are you sure?"
+    fre j_nervous "Are you sure?"
 
     oph "Hey, we used to all the time back in the day."
 
-    fre "Things are a little different now!"
+    fre j_embarrassed_ec "Things are a little different now!" with hpunch
 
     oph "Yeah, now people can't claim we're some closeted het couple."
 
@@ -367,13 +367,13 @@ label scene_2:
 
     oph "Right? I never understood why some parents want their kids to hook up so much. And Christ, did it take them a long time to understand what gay meant."
 
-    fre "I think they thought I was the gayer one."
+    fre j_smile "I think they thought I was the gayer one."
 
-    oph "Are you not?"
+    oph devious "Are you not?"
 
     fre "Well, {i}now{/i}, sure. But they were sure you'd end up with some boy."
 
-    oph "Fuckin' gross."
+    oph disbelief "Fuckin' gross."
 
     fre "Hey, guys aren't so bad."
 
@@ -385,7 +385,7 @@ label scene_2:
 
     fre "No, you're not."
 
-    oph "So! Let's sleep together!"
+    oph cheeky "So! Let's sleep together!"
 
     "She rolls her eyes and helps me set up the bottom bunk."
 
@@ -399,11 +399,11 @@ label scene_2:
 
     "I reach out, pulling her closer."
 
-    fre "Ack!"
+    fre j_shocked "Ack!" with hpunch
 
-    fre "Hey!"
+    fre j_embarrassed_smile "Hey!" with hpunch
 
-    oph "Just rip off the bandaid already! It's not like I have cooties."
+    oph surprised_ec "Just rip off the bandaid already! It's not like I have cooties."
 
     fre "Yeah, but..."
 
