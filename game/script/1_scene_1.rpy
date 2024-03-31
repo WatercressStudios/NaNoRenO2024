@@ -143,7 +143,7 @@ label scene_1:
         alpha 1.0
         linear 1 alpha 0.0
     pause 1
-    hide black
+    hide black onlayer foreground
 
     "Still in a rush, I open the door and glance at what our bereavement bought us: A couple of seats foldable into a bed, a bunk up top, and a collapsed tray table in the wall between."
 

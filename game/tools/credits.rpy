@@ -8,7 +8,7 @@ label credits:
 
 init python:
     credits_duration = 30.0
-    credits_height = 3600
+    credits_height = 4500
     credits_content = [
         ( "Developed for Nanoreno 2024.",
             [
@@ -33,25 +33,6 @@ init python:
             [
                 "Paul Robins",
             ]
-            # [
-            #     (
-            #         "Music Director",
-            #         "Paul Robins",
-            #     ),
-            #     (
-            #         "Music",
-            #         "Paul Robins",
-            #     ),
-            #     # (
-            #     #     "Sound Design",
-            #     #     "Maddie Anderson",
-            #     # ),
-            #     # (
-            #     #     "Sound Editing",
-            #     #     "Paul Robins",
-            #     #     "Tristan \"Wolf\" Barber",
-            #     # ),
-            # ]
         ),
         ( "Art",
             [
@@ -101,9 +82,8 @@ init python:
         ( "Ren'py Scripting",
             [
                 "Wolf",
-                "Val Sørseth",
                 "Sagittaeri",
-                "Brad \"EchoFrost\" Whitesell",
+                "Paul Robins",
             ]
         ),
         ( "Marketing",
