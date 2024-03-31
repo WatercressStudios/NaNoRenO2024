@@ -116,6 +116,8 @@ label scene_4:
 
     "She jokingly sticks her tongue out at me and pushes me down along the train, past other rooms until we find our door."
 
+    $ hide_sides = ['Freya', 'Ophelia']
+
     show oph normal onlayer foreground
     show fre normal onlayer foreground
     "As we stumble into our seats, Ophi digs through her bag."

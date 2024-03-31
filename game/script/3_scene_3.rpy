@@ -360,8 +360,6 @@ label scene_3:
 
     fre "I could stay like this forever."
 
-    $ hide_sides = ['Freya, Ophelia']
-
     ###End Scene 3
     jump scene_4
 
