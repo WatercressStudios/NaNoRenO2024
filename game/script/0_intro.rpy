@@ -8,10 +8,11 @@ define g = Character("Grandma", kind=nvl, what_color="#ffffff")
 
 label start:
     $ GameLoop.start()
-    menu:
-        "Start game normally":
-            jump scene_1
-        "Test moving train BG":
-            jump test_train
+    jump scene_1
+    # menu:
+    #     "Start game normally":
+    #         jump scene_1
+    #     "Test moving train BG":
+    #         jump test_train
 
 return
