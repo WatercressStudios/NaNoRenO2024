@@ -110,9 +110,9 @@ screen say(who, what):
     ## phone variant - there's no room.
     if not renpy.variant("small"):
         if not who in hide_sides:
-            if who is 'Freya':
+            if who == 'Freya':
                 add SideImage() pos (-0.07, 0.65)
-            elif who is 'Ophelia':
+            elif who == 'Ophelia':
                 add SideImage() pos (0.36, 0.55)
 
 
