@@ -27,6 +27,7 @@ init python:
     MapEmote('oph cheeky', 'oph default base md_smile ec_smile brow_default')
     MapEmote('oph sad', 'oph default guarded md_default ed_sad brow_sad sweat')
     MapEmote('oph happy', 'oph default base mdo_surprised ec_smile brow_default')
+    MapEmote('oph devious', 'oph default guarded mdo_happy ed_anger brow_default')
 
 
 
@@ -43,6 +44,8 @@ init python:
     MapEmote('fre nervous', 'fre default guarded md_smile ed_default brow_sad')
     MapEmote('fre nervous_b', 'fre default base md_sad ed_sad brow_sad sweat')
     MapEmote('fre smile', 'fre default base md_smile ec_smile brow_relaxed')
+    MapEmote('fre shocked', 'fre default armrest mdo_surprised ed_surprised brow_relaxed sweat')
+    MapEmote('fre cheeky', 'fre default guarded md_smile ed_anger brow_default')
 
     MapEmote('fre j_normal', 'fre default basejacket md_default ed_default brow_default')
     MapEmote('fre j_normal_ec', 'fre default basejacket md_default ec_default brow_default')
@@ -55,3 +58,5 @@ init python:
     MapEmote('fre j_nervous', 'fre default guardedjacket md_smile ed_default brow_sad')
     MapEmote('fre j_nervous_b', 'fre default basejacket md_sad ed_sad brow_sad sweat')
     MapEmote('fre j_smile', 'fre default basejacket md_smile ec_smile brow_relaxed')
+    MapEmote('fre j_shocked', 'fre default armrestjacket mdo_surprised ed_surprised brow_relaxed sweat')
+    MapEmote('fre j_cheeky', 'fre default guardedjacket md_smile ed_anger brow_default')

@@ -1,5 +1,5 @@
-﻿define fre = Character("Freya")
-define oph = Character("Ophelia")
+﻿define fre = Character("Freya", callback=speaker("fre"))
+define oph = Character("Ophelia", callback=speaker("oph"))
 define gra = Character("Grandma")
 define n = Character(None, kind=nvl, what_color="#ffffff")
 define f = Character("Freya", kind=nvl)

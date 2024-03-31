@@ -19,7 +19,8 @@ label scene_2:
     pause 0.5
 
     show oph nervous onlayer foreground
-    show fre j_embarrassed onlayer foreground
+    show fre j_sad_ec onlayer foreground
+    camera foreground at camera_transform(shake=0.5, pos=(0.0, 0.66), zoom=2.01, duration=0.0)
 
     show black onlayer fade:
         xpos 0.0
@@ -27,14 +28,21 @@ label scene_2:
     pause 1
     hide black
 
+    $ test_movingpolesrandom.set_show(True)
+
     "So far, my plan hasn't been as successful as I hoped it'd be."
 
+    camera foreground at camera_transform(shake=0.0, pos=(1.0, 0.7), zoom=2.01, duration=2.0)
     "It's been an hour and she's barely said a word. I know her more than anyone—even with her new face, I can tell she's terrified."
+
+    camera foreground at camera_transform(shake=0.0, pos=(1.0, 0.7), zoom=2.01)
+    $ test_movingpolesrandom.set_show(False)
 
     "...I have to wonder what's happened since I left. Grandma kept me updated, but there's only so much she could've done. Freya's more of a mystery than she ever has been, and that's deeply unsettling."
 
     "When we first sat down, it was like she had seen a ghost. I guess... I know I'm a ghost to her. So it makes sense. I outright stopped texting her. And I didn't stop for any good reason, either."
 
+    camera foreground at camera_transform(shake=0.0, pos=(0.5, 0.5), zoom=1.01, duration=10.0)
     "Just distance."
 
     "Distraction."
@@ -59,14 +67,19 @@ label scene_2:
 
     "No, this cannot continue."
 
+    show oph smile onlayer foreground
+    camera foreground at camera_transform(shake=0.0, pos=(0.0, 0.66), zoom=2.01, duration=1.0)
     oph "Yo, Freya, I have an idea. Shoot me down if you're not into it, but I think a bit of a social media detox could do us some good."
 
     oph "God knows it's all been a toxic shitshow for a while now, and hey. We could use the time to talk to each other."
 
     oph "Yeah?"
 
+    show fre j_sad onlayer foreground
+    camera foreground at camera_transform(shake=0.0, pos=(1.0, 0.7), zoom=2.01, duration=1.0)
     "Freya looks reluctant at first, giving furtive glances back to her phone, before relenting."
 
+    show fre j_nervous onlayer foreground
     fre "You're right. Even though you've... we've..."
 
     "...Even though I haven't talked to her in so long? Even though I left her behind?"
@@ -77,16 +90,26 @@ label scene_2:
 
     fre "...Because I've missed you, Ophi, and I hope you've missed me, too."
 
+    show oph cheeky onlayer foreground
+    camera foreground at camera_transform(shake=0.0, pos=(0.0, 0.66), zoom=2.01, duration=1.0)
+    pause 0.5
     oph "Hah! Of course I have, you have no idea!"
 
+    camera foreground at camera_transform(shake=0.0, pos=(1.0, 0.7), zoom=2.01, duration=1.0)
+    pause 1.0
+    show fre j_sad onlayer foreground
     fre "Yeah... I don't."
 
     "Ouch."
 
+    camera foreground at camera_transform(shake=0.0, pos=(0.5, 0.5), zoom=1.01, duration=2.0)
+    show oph nervous onlayer foreground
+    pause 1.8
     oph "Believe me, there's not a day that goes by without me thinking of you. You're my best friend, and you always will be!"
 
     oph "I had my reasons for not talking to you. Not the best reasons, but... I'll talk to you about it. Just not right now."
 
+    show oph smile onlayer foreground
     oph "I want to enjoy our time together for a bit longer before things get heavy."
 
     oph "Just like we used to."
@@ -95,52 +118,87 @@ label scene_2:
 
     "We both fucked up. I hate how relieved that makes me feel."
 
+    show fre j_nervous onlayer foreground
     fre "That's fair."
 
     oph "So! Now that we've... temporarily? Cleared the air, there's something I've been dying to ask you."
 
     fre "Oh?"
 
+    show oph devious onlayer foreground
     "I put on a devious smile."
 
+    camera foreground at camera_transform(shake=0.0, pos=(0.0, 0.66), zoom=2.01, duration=0.0)
     oph "Ya single?"
 
+    camera foreground at camera_transform(shake=0.0, pos=(1.0, 0.7), zoom=2.01, duration=0.0)
+    show fre j_shocked blush onlayer foreground with hpunch
     "She coughs on her drink, the abrupt tonal shift taking her completely by surprise."
 
     fre "Good God Ophi, you really haven't changed one bit."
 
+    camera foreground at camera_transform(shake=0.0, pos=(0.0, 0.66), zoom=2.01, duration=0.5)
+    pause 0.5
     oph "Nope! Now answer the damned question!"
 
+    camera foreground at camera_transform(shake=0.0, pos=(1.0, 0.7), zoom=2.01, duration=0.5)
+    show fre j_embarrassed_smile onlayer foreground
+    pause 0.5
     fre "Christ, give me a second, won't you?"
 
     "Gathering herself, she simply shakes her head."
 
+    camera foreground at camera_transform(shake=0.0, pos=(0.0, 0.66), zoom=2.01, duration=1)
+    pause 1
     oph "Ooooh?"
 
+    camera foreground at camera_transform(shake=0.0, pos=(1.0, 0.7), zoom=2.01, duration=1)
+    pause 1
     fre "I swear! Haven't been feeling it. The dating scene in Florida is messy enough, but for someone like me? No shot."
 
+    show oph cheeky onlayer foreground
+    camera foreground at camera_transform(shake=0.0, pos=(0.5, 0.5), zoom=1.01, duration=2)
     "I stop myself from smiling, laughing awkwardly instead."
 
     oph "Yeah, fuck Florida!"
 
+    show fre j_nervous onlayer foreground
     fre "Fuck Florida."
 
     "I'm happy that she's single. Which... on the surface, sounds really shitty. But, I dunno. I always liked her, but I was never into her... when she wasn't \"her\" to me."
 
     "But now she is. And that makes me happy."
 
+    camera foreground at camera_transform(shake=0.0, pos=(1.0, 0.7), zoom=2.01, duration=1)
+    show fre j_cheeky onlayer foreground
+    pause 1
     fre "So? You think you can get away with asking that and not returning the favor?"
 
+    camera foreground at camera_transform(shake=0.0, pos=(0.0, 0.66), zoom=2.01, duration=1)
+    show oph surprised_ec onlayer foreground
+    pause 1
     oph "Oh, no, no one. I was far too busy for a while. And recently, well... I haven't been in the headspace for it."
 
+    camera foreground at camera_transform(shake=0.0, pos=(1.0, 0.7), zoom=2.01, duration=1)
+    pause 1
     fre "Hmm."
 
+    camera foreground at camera_transform(shake=0.0, pos=(0.0, 0.66), zoom=2.01, duration=1)
+    show oph surprised onlayer foreground with hpunch
+    pause 1
     oph "Oh don't you \"hmm\" me!"
 
+    camera foreground at camera_transform(shake=0.0, pos=(1.0, 0.7), zoom=2.01, duration=1)
+    pause 1
     fre "Hmm~"
 
+    camera foreground at camera_transform(shake=0.0, pos=(0.0, 0.66), zoom=2.01, duration=0.0)
+    show oph surprised onlayer foreground with hpunch
     oph "Hey!"
 
+    camera foreground at camera_transform(shake=0.0, pos=(0.5, 0.5), zoom=1.01, duration=1.0)
+    show fre j_nervous onlayer foreground
+    pause 1
     fre "Well, that's good to hear."
 
     "Wha?"
@@ -149,12 +207,14 @@ label scene_2:
 
     "It's her turn to smile devilishly at me."
 
+    show fre j_cheeky onlayer foreground
     fre "If you succeed in getting me to stay in Oregon, you're going to need a good wingwoman."
 
     fre "Not that I'm saying I will make the move. But if I do, you're going to need all the help you can get."
 
     oph "Hey!"
 
+    show fre j_smile onlayer foreground
     fre "I mean, look at you. What are you, a bassist in an early 2000's alternative rock band?"
 
     oph "Oh don't you judge me Ms. \"Cottage isn't just a lifestyle\". And I was in a band! As the lead guitarist, no less!"
@@ -163,17 +223,22 @@ label scene_2:
 
     oph "Hah! No."
 
+    show fre j_cheeky onlayer foreground
     "She arches her brow, knowing that under normal circumstances I wouldn't stop there. But, again, keep it light. Heavy can come later."
 
     "I quickly switch topics."
 
+    show oph cheeky onlayer foreground
     oph "Anyway, I'm hungry, and we haven't checked out the dining car. How're you feeling?"
 
     "She shrugs."
 
+    show fre j_smile onlayer foreground
     fre "I could go for some food right now, sure."
 
     "Getting up, I reach my hand out and pull her up beside me."
+
+    
 
     "Even though we've had a few hang ups here and there, I'm willing to accept this truce of ours. We've lost too much time to waste it now."
 
