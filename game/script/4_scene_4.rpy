@@ -7,11 +7,9 @@ label scene_4:
         xpos 1.0
         linear 1 xpos 0
     pause 1
-    show screen map(12, True) with dissolve
+    show screen map(10, True) with dissolve
     pause
-    show screen map(13, True) with dissolve
-    pause
-    show screen map(14, True) with dissolve
+    show screen map(11, True) with dissolve
     pause
     hide screen map with dissolve
     pause 0.5
@@ -31,6 +29,19 @@ label scene_4:
     "She sits up, taking a long, catlike stretch."
 
     oph "Hell yeah, let’s do it!"
+
+    hide black onlayer foreground
+    hide black onlayer fade
+    show black onlayer fade with dissolve
+    show station_empty onlayer foreground
+    show text "{color=#FFFFFF}{size=70}Alpine Station" onlayer foreground:
+        align (0.49, 0.07)
+    camera foreground:
+        align (0.5, 0.0) zoom 3
+    hide black onlayer fade with dissolve
+    camera foreground:
+        ease 2.0 align (0.5, 0.5) zoom 1.5
+    pause 2
 
     "We clamber out of the train, and out onto the platform of the remote station."
 
@@ -101,6 +112,11 @@ label scene_4:
     "She definitely could have gotten my attention another way if she wanted."
 
     ####Fade out, in
+    show black onlayer fade with dissolve
+    hide station_empty onlayer foreground
+    hide text onlayer foreground
+    camera foreground:
+        zoom 1.01 align (0.5, 0.5)
 
     "As we’re walking back to the room from dinner, a bend in the tracks throws me off balance."
 
@@ -118,8 +134,13 @@ label scene_4:
 
     $ hide_sides = ['Freya', 'Ophelia']
 
-    show oph normal onlayer foreground
-    show fre normal onlayer foreground
+    hide oph onlayer foreground
+    hide fre onlayer foreground
+    show oph normal onlayer foreground at oph_transform
+    show fre normal onlayer foreground at fre_transform
+
+    hide black onlayer fade with dissolve
+
     "As we stumble into our seats, Ophi digs through her bag."
 
     show oph happy onlayer foreground
@@ -140,11 +161,11 @@ label scene_4:
     show fre e_smile onlayer foreground
     oph "Anyway, this is my baby Firetruck. I usually call him Fuckie or Asshole though."
 
-    scene black onlayer foreground with dissolve
+    show black onlayer fade with dissolve
 
     "She passes me her phone, and I catch the briefest glimpse of an orange cat before the train rounds another bend."
 
-    scene black onlayer foreground with hpunch
+    show black onlayer fade with hpunch
 
     "The sudden, if small, shift in momentum was more than enough to send Ophi’s phone tumbling to the floor—and Ophi herself tumbling right into my lap."
 
@@ -176,6 +197,8 @@ label scene_4:
 
     show oph embarrassed onlayer foreground
     show fre embarrassed_b onlayer foreground
+    hide black onlayer fade with dissolve
+
     "I recognize the look now: longing."
 
     show oph embarrassed_mo onlayer foreground

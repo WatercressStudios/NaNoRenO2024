@@ -283,11 +283,6 @@ label scene_3:
 
     nvl clear
     pause 0.5
-
-    show screen map(10, True) with dissolve
-    pause
-    show screen map(11, True) with dissolve
-    pause
     hide screen map with dissolve
 
     ###End Jared's San Antonio Scene

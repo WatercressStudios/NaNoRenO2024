@@ -1,6 +1,27 @@
 label scene_5:
     #Scene 5
 
+    $ map_zoom = 3
+    window hide
+    show black onlayer fade:
+        xpos 1.0
+        linear 1 xpos 0
+    pause 1
+    show screen map(12, True) with dissolve
+    pause
+    show screen map(13, True) with dissolve
+    pause
+    show screen map(14, True) with dissolve
+    pause
+    hide screen map with dissolve
+    pause 0.5
+
+    show black onlayer fade:
+        xpos 0.0
+        linear 1 xpos -1.0
+    pause 1
+    hide black
+
     "Ohmygodohmygodohmygod"
 
     "Did last night really happen?"
@@ -370,6 +391,17 @@ label scene_5:
     ##End Scene 5
 
     ###Map Transition - Los Angeles
+    $ map_zoom = 3
+    window hide
+    show black onlayer fade:
+        xpos 1.0
+        linear 1 xpos 0
+    pause 1
+    show screen map(15, True) with dissolve
+    pause
+    show screen map(16, True) with dissolve
+    pause
+    hide screen map with dissolve
 
     ####Jared's Los Angeles Scene
     ####NVL Format!
