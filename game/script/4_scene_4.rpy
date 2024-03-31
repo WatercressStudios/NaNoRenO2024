@@ -7,6 +7,7 @@ label scene_4:
         xpos 1.0
         linear 1 xpos 0
     pause 1
+    play sound "sfx/Train Map.ogg"
     show screen map(10, True) with dissolve
     pause
     show screen map(11, True) with dissolve
@@ -178,7 +179,7 @@ label scene_4:
     "Fighting against the fear and anxiety building in my chest, my heart beats so loudly and quickly that I’m sure Ophi can hear it."
 
     "I close my eyes, and, taking a deep breath, I lean in."
-
+    play music "music/Track 8.ogg" fadein 2.0
     "Ophi meets me halfway, and we gently lock lips."
 
     "The kiss lasts for a short moment that feels like an eternity."
@@ -259,5 +260,5 @@ label scene_4:
     show e_laugh_b onlayer foreground
     show fre e_happy_b onlayer background
     fre "Not for a single second."
-
+    stop music fadeout 4.0
     jump scene_5

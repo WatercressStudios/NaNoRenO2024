@@ -110,10 +110,10 @@ screen say(who, what):
     ## phone variant - there's no room.
     if not renpy.variant("small"):
         if not who in hide_sides:
-            if who is 'Freya':
-                add SideImage() pos (-0.07, 0.65)
-            elif who is 'Ophelia':
-                add SideImage() pos (0.36, 0.55)
+            if who == 'Freya':
+                add SideImage() pos (-0.02, 0.65)
+            elif who == 'Ophelia':
+                add SideImage() pos (0.33, 0.55)
 
 
 ## Make the namebox available for styling through the Character object.
@@ -260,8 +260,8 @@ screen quick_menu():
                 action ShowMenu('history')
                 tooltip "History"
             imagebutton auto "gui/train/qbuttons/qbutton_menu_%s.png":
-                action ShowMenu('pause_menu')
-                tooltip "Pause Menu"
+                action ShowMenu('preferences')
+                tooltip "Preferences"
 
         frame:
             background Image("gui/train/ticket_barcode.png", xalign=1.0, xoffset=-544, yalign=0.9979)
@@ -559,7 +559,6 @@ style game_menu_viewport:
     xsize 1700
 
 style game_menu_vscrollbar:
-    xoffset -18
     unscrollable gui.unscrollable
 
 style game_menu_side:
@@ -892,7 +891,7 @@ style radio_button_text:
     properties gui.text_properties("radio_button")
     xalign 0.0
     yalign 0.0
-    yoffset 0
+    yoffset -14
 
 style check_vbox:
     spacing gui.pref_button_spacing
@@ -906,7 +905,7 @@ style check_button_text:
     properties gui.text_properties("check_button")
     xalign 0.0
     yalign 0.0
-    yoffset 0
+    yoffset -14
 
 style slider_slider:
     xsize 525
@@ -945,6 +944,7 @@ screen history():
         for h in _history_list:
 
             window:
+                xsize 1600
                 ## This lays things out properly if history_height is None.
                 has fixed:
                     yfit True
@@ -1024,15 +1024,15 @@ screen help():
 
     default device = "keyboard"
 
-    use game_menu(_("Help"), scroll="viewport"):
+    use game_menu(_("Help"), scroll="vpgrid"):
 
         style_prefix "help"
 
         vbox:
+            xsize 1600
             spacing 23
 
             hbox:
-
                 textbutton _("Keyboard") action SetScreenVariable("device", "keyboard")
                 textbutton _("Mouse") action SetScreenVariable("device", "mouse")
 
@@ -1158,14 +1158,14 @@ style help_text is gui_text
 
 style help_button:
     properties gui.button_properties("help_button")
-    xmargin 12
+    xmargin 20
 
 style help_button_text:
     properties gui.text_properties("help_button")
 
 style help_label:
-    xsize 375
-    right_padding 30
+    xsize 600
+    right_padding 40
 
 style help_label_text:
     size gui.text_size

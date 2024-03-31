@@ -7,6 +7,7 @@ label scene_5:
         xpos 1.0
         linear 1 xpos 0
     pause 1
+    play sound "sfx/Train Map.ogg"
     show screen map(12, True) with dissolve
     pause
     show screen map(13, True) with dissolve
@@ -29,7 +30,7 @@ label scene_5:
     "Am I the luckiest fucking girl this side of the Mississippi?"
 
     "I kissed Freya. And more importantly, {i}Freya kissed me{/i}."
-
+    play music "music/Track 7.ogg" fadein 2.0
     "And here she is now, asleep in my arms. This isn't the first time we've done this, but... everything's different now."
 
     "I had always thought, \"If only she were a girl.\". I got my wish tenfold."
@@ -75,7 +76,7 @@ label scene_5:
     "Today, I'll have to come clean to her. Tell her why I stopped talking to her. Why I pushed her away."
 
     "I give her a light kiss on the forehead, slowly unwrapping myself from her."
-
+    stop music fadeout 4.0
     oph "I gotta freshen up, 'kay?"
 
     fre "'Kayy."
@@ -121,7 +122,9 @@ label scene_5:
     "The empty landscape moves past at a dizzying speed, but the emptiness of it all slows time down to a crawl. If you count the rumbling of the train, it's like being rocked into a dream."
 
     ##focus back to inside cabin
-
+    
+    play music "music/Track 9.ogg" fadein 2.0
+    
     show fre e_normal onlayer foreground
     "Freya sits across from me, sipping her juice from a straw and shifting around in her seat." 
 
@@ -307,11 +310,11 @@ label scene_5:
     fre "That's... Yeah."
 
     "Freya turns her head down, then rubs her eyes."
-
+    
     fre "Thank you, Ophelia."
 
     fre "I think I needed to hear that."
-
+    stop music fadeout 4.0
     ####End Zodai's Grandma Scene
 
     oph "Any time, Frey. I'm here for you, and I'm not going to change any time soon."
@@ -417,6 +420,7 @@ label scene_5:
         xpos 1.0
         linear 1 xpos 0
     pause 1
+    play sound "sfx/Train Map.ogg"
     show screen map(15, True) with dissolve
     pause
     show screen map(16, True) with dissolve
