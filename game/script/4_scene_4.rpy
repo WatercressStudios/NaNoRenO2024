@@ -116,19 +116,33 @@ label scene_4:
 
     "She jokingly sticks her tongue out at me and pushes me down along the train, past other rooms until we find our door."
 
+    show oph normal onlayer foreground
+    show fre normal onlayer foreground
     "As we stumble into our seats, Ophi digs through her bag."
 
+    show oph happy onlayer foreground
     oph "Thank fuck, it’s in here."
 
+    show oph e_smile onlayer foreground
+    show fre happy onlayer foreground
     "Ophi holds up her phone, smiling."
 
+    show fre cheeky onlayer foreground
     fre "I told you it would be. There’s basically nowhere else it could have been."
 
+    show oph e_normal onlayer foreground
+    show fre normal onlayer foreground
     "She flips through her camera app, readying some pictures to show me."
 
+    show oph e_laugh onlayer foreground
+    show fre e_smile onlayer foreground
     oph "Anyway, this is my baby Firetruck. I usually call him Fuckie or Asshole though."
 
+    scene black onlayer foreground with dissolve
+
     "She passes me her phone, and I catch the briefest glimpse of an orange cat before the train rounds another bend."
+
+    scene black onlayer foreground with hpunch
 
     "The sudden, if small, shift in momentum was more than enough to send Ophi’s phone tumbling to the floor—and Ophi herself tumbling right into my lap."
 
@@ -158,42 +172,67 @@ label scene_4:
 
     "Opening my eyes, I realize that Ophi is still looking at me the same as before the kiss."
 
+    show oph embarrassed onlayer foreground
+    show fre embarrassed_b onlayer foreground
     "I recognize the look now: longing."
 
+    show oph embarrassed_mo onlayer foreground
     oph "I’ve been waiting all day for that."
 
+    show fre embarrassed_mo onlayer foreground
+    show oph embarrassed onlayer foreground
     "I can’t help but laugh in spite of myself."
 
+    show fre e_happy onlayer foreground
     fre "All day, huh? Try waiting sixteen years."
 
+    show fre e_embarrassed onlayer foreground
     "I blush, realizing too late that I might have said too much, but Ophi is unphased."
 
+    show oph devious onlayer foreground
     oph "You think I didn’t know?"
 
+    show fre shocked onlayer foreground
     fre "I, uh…"
 
+    show oph cheeky onlayer foreground
     oph "I figured it out in like, freshman year, you dork."
 
+    show fre shocked_b onlayer foreground
     fre "Oh."
 
     "Oh shit, oh fuck, what the fuck?"
 
+    show oph e_devious onlayer foreground
+    show fre e_sad_mo onlayer foreground
     oph "But I never looked your way back then, and you knew why."
 
+    show oph e_normal onlayer foreground
+    show fre e_sad onlayer foreground
     oph "Then I heard about your transition from Grandma, and I was curious, but you were so far away, and I never knew what to say."
 
+    show oph e_smile onlayer foreground
+    show fre e_sad_smile onlayer foreground
     oph "Then I saw you on the platform back in Jacksonville."
 
+    show oph e_smile_b onlayer foreground
+    show fre e_smile onlayer foreground
     oph "I really {i}saw{/i} you."
 
+    show oph e_laugh_b onlayer foreground
+    show fre e_smile_b onlayer background
     oph "And I knew I loved you the way you used to love me. I just hoped you still felt the same way."
 
     "My mind is racing faster than the train, a hundred thoughts rush to the surface all at once, but I push them all down. I’ll think later."
 
+    show oph e_smile_b onlayer foreground
+    show fre e_embarrassed_mo onlayer background
     fre "I never stopped loving you."
 
     "I lean in and give her a quick kiss on the cheek."
 
+    show e_laugh_b onlayer foreground
+    show fre e_happy_b onlayer background
     fre "Not for a single second."
 
     jump scene_5

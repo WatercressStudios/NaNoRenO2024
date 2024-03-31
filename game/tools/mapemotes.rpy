@@ -30,6 +30,8 @@ init python:
     MapEmote('oph happy', 'oph default base mdo_surprised ec_smile brow_default')
     MapEmote('oph devious', 'oph default guarded mdo_happy ed_anger brow_default')
     MapEmote('oph laugh', 'oph default base mdo_happy ec_smile brow_default')
+    MapEmote('oph embarrassed', 'oph default base md_smile ed_default brow_sad blush sweat')
+    MapEmote('oph embarrassed_mo', 'oph default base mdo_default ed_default brow_sad blush sweat')
 
     MapEmote('oph e_normal', 'oph engaged base md_default ed_default brow_default')
     MapEmote('oph e_smile', 'oph engaged base md_smile ed_default brow_default')
@@ -42,6 +44,8 @@ init python:
     MapEmote('oph e_sad_mo', 'oph engaged base mdo_default ed_sad brow_sad')
     MapEmote('oph e_surprised', 'oph engaged base mdo_surprised ed_surprised brow_default')
     MapEmote('oph e_laugh', 'oph engaged base mdo_happy ec_smile brow_default')
+    MapEmote('oph e_laugh_b', 'oph engaged base mdo_happy ec_smile brow_default blush sweat')    
+    MapEmote('oph e_smile_b', 'oph engaged base md_smile ec_smile brow_default blush sweat')
 
 
 
@@ -63,6 +67,10 @@ init python:
     MapEmote('fre cheeky', 'fre default guarded md_smile ed_anger brow_default')
     MapEmote('fre yawn', 'fre default basejacket mdo_default ec_default brow_relaxed')
     MapEmote('fre pout', 'fre default guarded md_pout ed_unimpressed brow_relaxed')
+    MapEmote('fre happy', 'fre default base md_smile ed_default brow_relaxed')
+    MapEmote('fre embarrassed_b', 'fre default base md_smile ed_sad brow_sad blush sweat')
+    MapEmote('fre embarrassed_mo', 'fre default base mdo_default ed_default brow_sad blush sweat')
+    MapEmote('fre shocked_b', 'fre default base mdo_surprised ed_surprised brow_relaxed sweat')
 
     MapEmote('fre j_normal', 'fre default basejacket md_default ed_default brow_default')
     MapEmote('fre j_normal_ec', 'fre default basejacket md_default ec_default brow_default')
@@ -88,3 +96,5 @@ init python:
     MapEmote('fre e_sad_mo', 'fre engaged base mdo_default ed_sad brow_sad')
     MapEmote('fre e_sad_smile', 'fre engaged base md_smile ed_sad brow_sad')
     MapEmote('fre e_devious', 'fre engaged base md_smile ed_anger brow_default')
+    MapEmote('fre e_smile_b', 'fre engaged base md_smile ec_smile brow_default blush')
+    MapEmote('fre e_embarrassed_mo', 'fre engaged base mdo_surprised ed_default brow_default blush')
