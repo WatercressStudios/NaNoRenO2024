@@ -207,7 +207,7 @@ label scene_7:
     "She looks out the window, her eyes not really fixed on anything in particular."
 
     show oph disbelief_ec onlayer foreground
-    oph "There were a few girls in my college days at U of O. Most of those bitches never achieved girlfriend status though. A lot of them ended up being straight girls using the closest lesbian as an experiment for their own sexuality."
+    oph "There were a few girls in my college days at U of O. None of them achieved girlfriend status though. Most of those bitches ended up being straight girls using the closest lesbian as an experiment for their own sexuality."
 
     show oph normal onlayer foreground
     oph "And then there were a handful of other girlfriends over the years since then. Only one of them was actually serious."
