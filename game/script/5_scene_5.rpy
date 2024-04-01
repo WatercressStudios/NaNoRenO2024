@@ -17,6 +17,11 @@ label scene_5:
     hide screen map with dissolve
     pause 0.5
 
+    hide fre_shadow onlayer foreground
+    hide fre onlayer foreground
+    hide oph_shadow onlayer foreground
+    hide oph onlayer foreground
+
     show black onlayer fade:
         xpos 0.0
         linear 1 xpos -1.0
@@ -51,9 +56,11 @@ label scene_5:
 
     "She stirs, slowly blinking at me with a simple smile."
 
-    fre "Heyy Ophi."
+    $ hide_sides = []
 
-    oph "Heyyy to you too, Frey. Did you get some good sleep?"
+    fre smile "Heyy Ophi."
+
+    oph cheeky "Heyyy to you too, Frey. Did you get some good sleep?"
 
     fre "Yeeahh, it was wonderful."
 
@@ -91,11 +98,24 @@ label scene_5:
 
     "Arriving back to our roomette, I help Freya up to her feet, and she takes her turn."
 
-    show fre normal onlayer foreground
-    show oph normal onlayer foreground
+    $ hide_sides = ['Ophelia', 'Freya']
+
+    show oph_shadow onlayer foreground:
+        alpha 0
+        linear 0.5 alpha 1
+    show oph normal onlayer foreground at oph_transform:
+        alpha 0
+        linear 0.5 alpha 1
+    pause 0.5
     "She comes back a short time later, drinks in hand, sitting down across from me. I gratefully accept the gift."
 
-    show fre pout onlayer foreground
+    show fre_shadow onlayer foreground:
+        alpha 0
+        linear 0.5 alpha 1
+    show fre pout onlayer foreground at fre_transform:
+        alpha 0
+        linear 0.5 alpha 1
+    pause 0.5
     fre "Aww, you put the bed away. It was nice~"
 
     show oph laugh onlayer foreground

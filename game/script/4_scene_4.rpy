@@ -212,7 +212,7 @@ label scene_4:
     show fre e_happy onlayer foreground
     fre "All day, huh? Try waiting sixteen years."
 
-    show fre e_embarrassed onlayer foreground
+    show fre e_embarrassed_mo onlayer foreground
     "I blush, realizing too late that I might have said too much, but Ophi is unphased."
 
     show oph devious onlayer foreground
@@ -257,7 +257,7 @@ label scene_4:
 
     "I lean in and give her a quick kiss on the cheek."
 
-    show e_laugh_b onlayer foreground
+    show oph e_laugh_b onlayer foreground
     show fre e_happy_b onlayer background
     fre "Not for a single second."
     stop music fadeout 4.0
