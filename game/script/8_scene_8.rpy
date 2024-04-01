@@ -30,7 +30,7 @@ label scene_8:
     # hide bg1_open onlayer foreground
 
     scene station_empty
-    show text "{color=#FFFFFF}{size=50}Eugene-Springfield Station":
+    show text "{color=#FFFFFF}{size=50}{noalt}Eugene-Springfield Station{/noalt}":
         align (0.49, 0.07)
     camera:
         align (0.5, 0.0) zoom 3
@@ -193,7 +193,7 @@ label scene_8:
     "We make our way out of the room and down the corridor one final time."
 
     scene station_empty
-    show text "{color=#FFFFFF}{size=50}Portland Union Station":
+    show text "{color=#FFFFFF}{size=50}{noalt}Portland Union Station{/noalt}":
         align (0.49, 0.07)
     camera:
         align (0.5, 0.0) zoom 3

@@ -35,7 +35,7 @@ label scene_4:
     hide black onlayer fade
     show black onlayer fade with dissolve
     show station_empty onlayer foreground
-    show text "{color=#FFFFFF}{size=70}Alpine Station" onlayer foreground:
+    show text "{color=#FFFFFF}{size=70}{noalt}Alpine Station{/noalt}" onlayer foreground:
         align (0.49, 0.07)
     camera foreground:
         align (0.5, 0.0) zoom 3

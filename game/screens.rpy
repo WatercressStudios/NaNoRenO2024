@@ -249,19 +249,24 @@ screen quick_menu():
             imagebutton auto "gui/train/qbuttons/qbutton_rollback_%s.png":
                 action Rollback()
                 tooltip "Rollback"
+                alt "Rollback"
             imagebutton auto "gui/train/qbuttons/qbutton_skip_%s.png":
                 action Skip()
                 alternate Skip(fast=True, confirm=True)
                 tooltip "Skip"
+                alt "Skip"
             imagebutton auto "gui/train/qbuttons/qbutton_auto_%s.png":
                 action Preference("auto-forward", "toggle")
                 tooltip "Auto Forward"
+                alt "Auto Forward"
             imagebutton auto "gui/train/qbuttons/qbutton_history_%s.png":
                 action ShowMenu('history')
                 tooltip "History"
+                alt "History"
             imagebutton auto "gui/train/qbuttons/qbutton_menu_%s.png":
                 action ShowMenu('preferences')
                 tooltip "Preferences"
+                alt "Preferences"
 
         frame:
             background Image("gui/train/ticket_barcode.png", xalign=1.0, xoffset=-544, yalign=0.9979)
@@ -333,34 +338,42 @@ screen navigation():
 
             imagebutton auto "gui/train/mbuttons/mbutton_start_%s.png":
                 action Start()
+                alt "Start"
 
         else:
 
             imagebutton auto "gui/train/mbuttons/mbutton_history_%s.png":
                 action ShowMenu("history")
+                alt "History"
 
             imagebutton auto "gui/train/mbuttons/mbutton_save_%s.png":
                 action ShowMenu("save")
+                alt "Save"
 
         imagebutton auto "gui/train/mbuttons/mbutton_load_%s.png":
             action ShowMenu("load")
+            alt "Load"
 
         imagebutton auto "gui/train/mbuttons/mbutton_preferences_%s.png":
             action ShowMenu("preferences")
+            alt "Preferences"
 
         if not main_menu:
 
             imagebutton auto "gui/train/mbuttons/mbutton_main_menu_%s.png":
                 action MainMenu()
+                alt "Main Menu"
 
         imagebutton auto "gui/train/mbuttons/mbutton_about_%s.png":
             action ShowMenu("about")
+            alt "About"
 
         if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
             ## Help isn't necessary or relevant to mobile devices.
             imagebutton auto "gui/train/mbuttons/mbutton_help_%s.png":
                 action ShowMenu("help")
+                alt "Help"
 
         if renpy.variant("pc"):
 
@@ -368,6 +381,7 @@ screen navigation():
             ## Web.
             imagebutton auto "gui/train/mbuttons/mbutton_quit_%s.png":
                 action Quit(confirm=not main_menu)
+                alt "Quit"
 
 
 style navigation_button is gui_button
@@ -519,6 +533,7 @@ screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
         yalign 1.0
         yoffset -97
         action Return()
+        alt "Return"
 
     if main_menu:
         key "game_menu" action ShowMenu("main_menu")

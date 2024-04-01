@@ -27,7 +27,7 @@ label scene_1:
     play env "sfx/Quiet Platform.ogg" fadein 1.0
     ###Fade into intro CG (if applicable, if not, NVL)
     scene station_empty
-    show text "{color=#FFFFFF}{size=50}Jacksonville Station":
+    show text "{color=#FFFFFF}{size=50}{noalt}Jacksonville Station{/noalt}":
         align (0.49, 0.07)
     camera:
         align (0.5, 0.0) zoom 3
