@@ -8,7 +8,7 @@ label credits:
 
 init python:
     credits_duration = 30.0
-    credits_height = 4500
+    credits_height = 5000
     credits_content = [
         ( "Developed for Nanoreno 2024.",
             [
@@ -84,6 +84,16 @@ init python:
                 "Wolf",
                 "Sagittaeri",
                 "Paul Robins",
+                "Brad \"EchoFrost\" Whitesell",
+            ]
+        ),
+        ( "Quality Assurance",
+            [
+                "Churlatte",
+                "Brad \"EchoFrost\" Whitesell",
+                "Wolf",
+                "Val Sørseth",
+                "Sagittaeri",
             ]
         ),
         ( "Marketing",
