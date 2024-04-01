@@ -75,7 +75,7 @@ label test_train:
 
     # NOTE: Be sure to show oph shadow whenever her sprite is shown
     show oph_shadow onlayer foreground
-    show oph a_normal onlayer foreground at oph_transform
+    show oph normal onlayer foreground at oph_transform
     
     # NOTE: Be sure to show fre shadow whenever her sprite is shown
     show fre_shadow onlayer foreground
@@ -145,7 +145,7 @@ label test_train:
 
     # NOTE: Be sure to show oph shadow whenever her sprite is shown
     show oph_shadow onlayer foreground
-    show oph a_normal onlayer foreground at oph_transform
+    show oph normal onlayer foreground at oph_transform
     
     # NOTE: Be sure to show fre shadow whenever her sprite is shown
     show fre_shadow onlayer foreground

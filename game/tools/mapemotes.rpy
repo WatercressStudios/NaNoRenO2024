@@ -90,6 +90,7 @@ init python:
     MapEmote('fre j_nervous_b', 'fre default basejacket md_sad ed_sad brow_sad sweat')
     MapEmote('fre j_smile', 'fre default basejacket md_smile ec_smile brow_relaxed')
     MapEmote('fre j_shocked', 'fre default armrestjacket mdo_surprised ed_surprised brow_relaxed sweat')
+    MapEmote('fre j_shocked_b', 'fre default armrestjacket mdo_surprised ed_surprised brow_relaxed blush sweat')
     MapEmote('fre j_cheeky', 'fre default guardedjacket md_smile ed_anger brow_default')
     MapEmote('fre j_yawn', 'fre default basejacket mdo_default ec_default brow_relaxed')
 

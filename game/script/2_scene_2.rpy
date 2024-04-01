@@ -131,7 +131,7 @@ label scene_2:
     oph "Ya single?"
 
     camera foreground at camera_transform(shake=0.0, pos=(1.0, 0.7), zoom=2.01, duration=0.0)
-    show fre j_shocked blush onlayer foreground with hpunch
+    show fre j_shocked_b onlayer foreground with hpunch
     "She coughs on her drink, the abrupt tonal shift taking her completely by surprise."
 
     fre "Good God Ophi, you really haven't changed one bit."
