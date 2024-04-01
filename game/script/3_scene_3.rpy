@@ -108,7 +108,9 @@ label scene_3:
     play music "music/Track 7.ogg" fadein 2.0
     show oph e_smile onlayer foreground
     "Vast pine woods flicker by, bringing a surge of memories from our early high school days."
-    
+
+    $ hide_sides = ['Freya', 'Ophelia']
+
     show fre e_smile onlayer foreground
     fre "Remember cutting through the woods to go to the cafe?"
 
