@@ -137,7 +137,11 @@ label scene_4:
 
     hide oph onlayer foreground
     hide fre onlayer foreground
+    hide oph_shadow onlayer foreground
+    hide fre_shadow onlayer foreground
+    show oph_shadow onlayer foreground
     show oph normal onlayer foreground at oph_transform
+    show fre_shadow onlayer foreground
     show fre normal onlayer foreground at fre_transform
 
     hide black onlayer fade with dissolve

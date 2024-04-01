@@ -295,8 +295,21 @@ label scene_5:
 
     "I take a sip of my water, then set the bottle back down."
 
-    show oph e_smile onlayer foreground at oph_transform with dissolve
-    show fre e_smile_ec onlayer foreground at fre_transform with dissolve
+    show oph_shadow onlayer foreground:
+        alpha 0.0
+        linear 0.5 alpha 1
+    show oph e_smile onlayer foreground at oph_transform:
+        alpha 0.0
+        linear 0.5 alpha 1
+    pause 0.5
+
+    show fre_shadow onlayer foreground:
+        alpha 0.0
+        linear 0.5 alpha 1
+    show fre e_smile_ec onlayer foreground at fre_transform:
+        alpha 0.0
+        linear 0.5 alpha 1
+    pause 0.5
 
     oph "She's the one who taught me who I wanted to be. If I can reach even a fraction, I think I'll be happy with that."
 
